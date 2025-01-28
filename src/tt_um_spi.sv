@@ -5,7 +5,7 @@
 
 `default_nettype none
 
-module tt_um_example (
+module tt_um_spi (
     input  wire [7:0] ui_in,    // Dedicated inputs
     output wire [7:0] uo_out,   // Dedicated outputs
     input  wire [7:0] uio_in,   // IOs: Input path
@@ -16,9 +16,24 @@ module tt_um_example (
     input  wire       rst_n     // reset_n - low to reset
 );
 
+spi_master_slave spi_module (
+    .clk(clk),           
+    .reset(rst_n),
+	.slave_rx_start(uio_in[0]),
+	.slave_tx_start(uio_in[1]),
+	.input_reg_data(ui_in),
+    .dout_miso(uio_in[2]), 	
+    .cs_bar(uio_in[3]),       
+    .sclk(uio_out[3]),
+	.din_mosi(uio_out[0]),	
+    .output_reg_data(uo_out),
+    .rx_valid(uio_out[1]),
+	.tx_done(uio_out[2])
+);
+
   // All output pins must be assigned. If not used, assign to 0.
-  assign uo_out  = ui_in + uio_in;  // Example: ou_out is the sum of ui_in and uio_in
-  assign uio_out = 0;
+  assign uio_in[7:5] = 0;
+  assign uio_out[7:4] = 0;
   assign uio_oe  = 0;
 
   // List all unused inputs to prevent warnings
