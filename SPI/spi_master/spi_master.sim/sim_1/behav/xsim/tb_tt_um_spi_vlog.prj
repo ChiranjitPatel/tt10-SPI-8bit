@@ -2,7 +2,7 @@
 sv xil_defaultlib  \
 "../../../../../../src/spi_master_slave.sv" \
 "../../../../../../src/tt_um_spi.sv" \
-"../../../../../../src/tb_project.sv" \
+"../../../../../../src/tb_tt_um_spi.sv" \
 
 # compile glbl module
 verilog xil_defaultlib "glbl.v"
