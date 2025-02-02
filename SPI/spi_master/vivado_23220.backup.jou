@@ -3,10 +3,10 @@
 # SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Sun Feb  2 16:47:15 2025
-# Process ID: 12648
+# Start of session at: Sat Feb  1 20:47:23 2025
+# Process ID: 23220
 # Current directory: D:/Github/tt10-SPI-8bit/SPI/spi_master
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent21848 D:\Github\tt10-SPI-8bit\SPI\spi_master\spi_master.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent3056 D:\Github\tt10-SPI-8bit\SPI\spi_master\spi_master.xpr
 # Log file: D:/Github/tt10-SPI-8bit/SPI/spi_master/vivado.log
 # Journal file: D:/Github/tt10-SPI-8bit/SPI/spi_master\vivado.jou
 # Running On        :GHOST
@@ -19,40 +19,48 @@
 # Host memory       :17041 MB
 # Swap memory       :1073 MB
 # Total Virtual     :18114 MB
-# Available Virtual :7914 MB
+# Available Virtual :6044 MB
 #-----------------------------------------------------------
 start_gui
 open_project D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.xpr
 update_compile_order -fileset sources_1
+add_files -norecurse {D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv D:/Github/tt10-SPI-8bit/src/spi_master_slave.sv}
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse D:/Github/tt10-SPI-8bit/src/tb_tt_um_spi.sv
+update_compile_order -fileset sim_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top tb_tt_um_spi [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
 launch_simulation
 open_wave_config D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg
 source tb_tt_um_spi.tcl
-restart
-run 5 us
-run 5 us
-close_sim
-launch_simulation
-open_wave_config D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg
-source tb_tt_um_spi.tcl
-restart
-run 5 us
-run 5 us
-close_sim
-launch_simulation
-open_wave_config D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg
-source tb_tt_um_spi.tcl
-restart
-run 5 us
-run 5 us
-close_sim
-launch_simulation
-open_wave_config D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg
-source tb_tt_um_spi.tcl
-restart
-run 5 us
-run 5 us
 current_wave_config {tb_spi_master_ver1_behav.wcfg}
 add_wave {{/tb_tt_um_spi}} 
+restart
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+close_sim
+launch_simulation
+open_wave_config D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg
+source tb_tt_um_spi.tcl
+current_wave_config {tb_spi_master_ver1_behav.wcfg}
+add_wave {{/tb_tt_um_spi}} 
+restart
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+run 5 us
 current_wave_config {tb_spi_master_ver1_behav.wcfg}
 add_wave {{/tb_tt_um_spi/uut}} 
 restart
@@ -62,6 +70,42 @@ current_wave_config {tb_spi_master_ver1_behav.wcfg}
 add_wave {{/tb_tt_um_spi/uut/spi_module}} 
 restart
 run 5 us
+save_wave_config {D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg}
+close_sim
+launch_simulation
+launch_simulation
+open_wave_config D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg
+source tb_tt_um_spi.tcl
+restart
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+close_sim
+launch_simulation
+open_wave_config D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg
+source tb_tt_um_spi.tcl
+restart
+run 5 us
+close_sim
+launch_simulation
+open_wave_config D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg
+source tb_tt_um_spi.tcl
+restart
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+restart
+run 5 us
+restart
+run 5 us
+current_wave_config {tb_spi_master_ver1_behav.wcfg}
+add_wave {{/tb_tt_um_spi/uut/spi_module}} 
+restart
 run 5 us
 save_wave_config {D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg}
 close_sim
@@ -71,9 +115,86 @@ source tb_tt_um_spi.tcl
 restart
 run 5 us
 run 5 us
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+run 5 us
 close_sim
 launch_simulation
+open_wave_config D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg
+source tb_tt_um_spi.tcl
+restart
+run 5 us
+run 5 us
+close_sim
 launch_simulation
+open_wave_config D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg
+source tb_tt_um_spi.tcl
+restart
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top spi_controller_tb_ver2 [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+close_sim
+launch_simulation
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top tb_spi_master_slave_ver2 [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+open_wave_config D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg
+source tb_spi_master_slave_ver2.tcl
+run 5 us
+restart
+current_wave_config {tb_spi_master_ver1_behav.wcfg}
+add_wave {{/tb_spi_master_slave_ver2/uut}} 
+run 5 us
+run 5 us
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top tb_tt_um_spi [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+close_sim
+launch_simulation
+open_wave_config D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg
+source tb_tt_um_spi.tcl
+restart
+run 5 us
+run 5 us
+close_sim
+launch_simulation
+open_wave_config D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg
+source tb_tt_um_spi.tcl
+restart
+run 5 us
+run 5 us
+close_sim
+launch_simulation
+open_wave_config D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg
+source tb_tt_um_spi.tcl
+restart
+run 5 us
+run 5 us
+close_sim
 launch_simulation
 open_wave_config D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg
 source tb_tt_um_spi.tcl
@@ -92,77 +213,6 @@ launch_simulation
 open_wave_config D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg
 source tb_tt_um_spi.tcl
 restart
-run 5 us
-run 5 us
-save_wave_config {D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg}
-close_sim
-launch_simulation
-open_wave_config D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg
-source tb_tt_um_spi.tcl
-restart
-run 5 us
-run 5 us
-close_sim
-launch_simulation
-launch_simulation
-open_wave_config D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg
-source tb_tt_um_spi.tcl
-restart
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-close_sim
-launch_simulation
-open_wave_config D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg
-source tb_tt_um_spi.tcl
-restart
-run 5 us
-run 5 us
-run 5 us
-close_sim
-launch_simulation
-open_wave_config D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg
-source tb_tt_um_spi.tcl
-restart
-run 5 us
-run 5 us
-run 5 us
-add_files -norecurse D:/Github/tt10-SPI-8bit/src/spi_master_slave.sv
-close_sim
-launch_simulation
-open_wave_config D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg
-source tb_tt_um_spi.tcl
-restart
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-close_sim
-launch_simulation
-open_wave_config D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg
-source tb_tt_um_spi.tcl
-restart
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-close_sim
-launch_simulation
-open_wave_config D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg
-source tb_tt_um_spi.tcl
-restart
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
 run 5 us
 run 5 us
 close_sim

@@ -3,10 +3,10 @@
 # SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Sun Feb  2 16:47:15 2025
-# Process ID: 12648
+# Start of session at: Sat Feb  1 20:47:23 2025
+# Process ID: 23220
 # Current directory: D:/Github/tt10-SPI-8bit/SPI/spi_master
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent21848 D:\Github\tt10-SPI-8bit\SPI\spi_master\spi_master.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent3056 D:\Github\tt10-SPI-8bit\SPI\spi_master\spi_master.xpr
 # Log file: D:/Github/tt10-SPI-8bit/SPI/spi_master/vivado.log
 # Journal file: D:/Github/tt10-SPI-8bit/SPI/spi_master\vivado.jou
 # Running On        :GHOST
@@ -19,7 +19,7 @@
 # Host memory       :17041 MB
 # Swap memory       :1073 MB
 # Total Virtual     :18114 MB
-# Available Virtual :7914 MB
+# Available Virtual :6044 MB
 #-----------------------------------------------------------
 start_gui
 open_project D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.xpr
@@ -90,8 +90,17 @@ Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/SOFTWARES/vivado2024/install/Vivado/2024.1/data/ip'.
-open_project: Time (s): cpu = 00:00:43 ; elapsed = 00:00:34 . Memory (MB): peak = 1488.648 ; gain = 394.777
+open_project: Time (s): cpu = 00:00:42 ; elapsed = 00:00:20 . Memory (MB): peak = 1493.109 ; gain = 401.781
 update_compile_order -fileset sources_1
+add_files -norecurse {D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv D:/Github/tt10-SPI-8bit/src/spi_master_slave.sv}
+WARNING: [filemgmt 56-12] File 'D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv' cannot be added to the project because it already exists in the project, skipping this file
+WARNING: [filemgmt 56-12] File 'D:/Github/tt10-SPI-8bit/src/spi_master_slave.sv' cannot be added to the project because it already exists in the project, skipping this file
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse D:/Github/tt10-SPI-8bit/src/tb_tt_um_spi.sv
+update_compile_order -fileset sim_1
+set_property top tb_tt_um_spi [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
 launch_simulation
 Command: launch_simulation 
 INFO: [Vivado 12-12493] Simulation top is 'tb_tt_um_spi'
@@ -105,53 +114,16 @@ INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
 INFO: [USF-XSim-2] XSim::Compile design
 INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
 "xvlog --incr --relax -L uvm -prj tb_tt_um_spi_vlog.prj"
-INFO: [USF-XSim-69] 'compile' step finished in '4' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
-"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_tt_um_spi_behav xil_defaultlib.tb_tt_um_spi xil_defaultlib.glbl -log elaborate.log"
-Vivado Simulator v2024.1
-Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: D:/SOFTWARES/vivado2024/install/Vivado/2024.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_tt_um_spi_behav xil_defaultlib.tb_tt_um_spi xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-Pass Through NonSizing Optimizer
-Completed static elaboration
-INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
-run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 1529.281 ; gain = 0.000
-INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "tb_tt_um_spi_behav -key {Behavioral:sim_1:Functional:tb_tt_um_spi} -tclbatch {tb_tt_um_spi.tcl} -view {D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
-Time resolution is 1 ps
-open_wave_config D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg
-source tb_tt_um_spi.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# run 1000ns
-Starting SPI transaction...
-xsim: Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 1544.727 ; gain = 15.445
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_tt_um_spi_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:09 ; elapsed = 00:00:18 . Memory (MB): peak = 1544.727 ; gain = 15.445
-restart
-INFO: [Wavedata 42-604] Simulation restarted
-run 5 us
-Starting SPI transaction...
-run 5 us
-SPI transaction complete, rx_valid asserted.
-SPI transmission successful.
-close_sim
-INFO: [Simtcl 6-16] Simulation closed
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/src/spi_master_slave.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module spi_master_slave
+ERROR: [VRFC 10-3640] port 'input_reg_data' is not defined [D:/Github/tt10-SPI-8bit/src/spi_master_slave.sv:23]
+ERROR: [VRFC 10-3640] port 'output_reg_data' is not defined [D:/Github/tt10-SPI-8bit/src/spi_master_slave.sv:30]
+ERROR: [VRFC 10-8530] module 'spi_master_slave' is ignored due to previous errors [D:/Github/tt10-SPI-8bit/src/spi_master_slave.sv:1]
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-99] Step results log file:'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim/xvlog.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
 launch_simulation
 Command: launch_simulation 
 INFO: [Vivado 12-12493] Simulation top is 'tb_tt_um_spi'
@@ -171,7 +143,7 @@ INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/src/t
 INFO: [VRFC 10-311] analyzing module tt_um_spi
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/src/tb_tt_um_spi.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module tb_tt_um_spi
-INFO: [USF-XSim-69] 'compile' step finished in '4' seconds
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
 INFO: [USF-XSim-3] XSim::Elaborate design
 INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
 "xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_tt_um_spi_behav xil_defaultlib.tb_tt_um_spi xil_defaultlib.glbl -log elaborate.log"
@@ -195,7 +167,7 @@ Compiling module xil_defaultlib.tt_um_spi
 Compiling module xil_defaultlib.tb_tt_um_spi
 Compiling module xil_defaultlib.glbl
 Built simulation snapshot tb_tt_um_spi_behav
-run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 1550.000 ; gain = 0.000
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 1545.797 ; gain = 0.000
 INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
 INFO: [USF-XSim-4] XSim::Simulate design
 INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
@@ -204,6 +176,17 @@ INFO: [USF-XSim-98] *** Running xsim
 INFO: [USF-XSim-8] Loading simulator feature
 Time resolution is 1 ps
 open_wave_config D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg
+WARNING: Simulation object /tb_project/clk was not found in the design.
+WARNING: Simulation object /tb_project/sclk was not found in the design.
+WARNING: Simulation object /tb_project/rst_n was not found in the design.
+WARNING: Simulation object /tb_project/ui_in was not found in the design.
+WARNING: Simulation object /tb_project/uo_out was not found in the design.
+WARNING: Simulation object /tb_project/uio_in was not found in the design.
+WARNING: Simulation object /tb_project/uio_out was not found in the design.
+WARNING: Simulation object /tb_project/uio_oe was not found in the design.
+WARNING: Simulation object /tb_project/test_data was not found in the design.
+WARNING: Simulation object /tb_project/i was not found in the design.
+WARNING: Simulation object /tb_project/CLK_PERIOD was not found in the design.
 source tb_tt_um_spi.tcl
 # set curr_wave [current_wave_config]
 # if { [string length $curr_wave] == 0 } {
@@ -215,17 +198,21 @@ source tb_tt_um_spi.tcl
 #   }
 # }
 # run 1000ns
-Starting SPI transaction...
 INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_tt_um_spi_behav' loaded.
 INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:07 ; elapsed = 00:00:13 . Memory (MB): peak = 1557.383 ; gain = 7.383
+launch_simulation: Time (s): cpu = 00:00:07 ; elapsed = 00:00:14 . Memory (MB): peak = 1572.969 ; gain = 27.172
+current_wave_config {tb_spi_master_ver1_behav.wcfg}
+tb_spi_master_ver1_behav.wcfg
+add_wave {{/tb_tt_um_spi}} 
 restart
 INFO: [Wavedata 42-604] Simulation restarted
 run 5 us
-Starting SPI transaction...
 run 5 us
-SPI transaction complete, rx_valid asserted.
-SPI transmission successful.
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+run 5 us
 close_sim
 INFO: [Simtcl 6-16] Simulation closed
 launch_simulation
@@ -247,7 +234,7 @@ INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/src/t
 INFO: [VRFC 10-311] analyzing module tt_um_spi
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/src/tb_tt_um_spi.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module tb_tt_um_spi
-INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
 INFO: [USF-XSim-3] XSim::Elaborate design
 INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
 "xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_tt_um_spi_behav xil_defaultlib.tb_tt_um_spi xil_defaultlib.glbl -log elaborate.log"
@@ -279,6 +266,17 @@ INFO: [USF-XSim-98] *** Running xsim
 INFO: [USF-XSim-8] Loading simulator feature
 Time resolution is 1 ps
 open_wave_config D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg
+WARNING: Simulation object /tb_project/clk was not found in the design.
+WARNING: Simulation object /tb_project/sclk was not found in the design.
+WARNING: Simulation object /tb_project/rst_n was not found in the design.
+WARNING: Simulation object /tb_project/ui_in was not found in the design.
+WARNING: Simulation object /tb_project/uo_out was not found in the design.
+WARNING: Simulation object /tb_project/uio_in was not found in the design.
+WARNING: Simulation object /tb_project/uio_out was not found in the design.
+WARNING: Simulation object /tb_project/uio_oe was not found in the design.
+WARNING: Simulation object /tb_project/test_data was not found in the design.
+WARNING: Simulation object /tb_project/i was not found in the design.
+WARNING: Simulation object /tb_project/CLK_PERIOD was not found in the design.
 source tb_tt_um_spi.tcl
 # set curr_wave [current_wave_config]
 # if { [string length $curr_wave] == 0 } {
@@ -293,75 +291,18 @@ source tb_tt_um_spi.tcl
 Starting SPI transaction...
 INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_tt_um_spi_behav' loaded.
 INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 1560.832 ; gain = 3.449
-restart
-INFO: [Wavedata 42-604] Simulation restarted
-run 5 us
-Starting SPI transaction...
-run 5 us
-SPI transaction complete, rx_valid asserted.
-SPI transmission successful.
-close_sim
-INFO: [Simtcl 6-16] Simulation closed
-launch_simulation
-Command: launch_simulation 
-INFO: [Vivado 12-12493] Simulation top is 'tb_tt_um_spi'
-WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-72] Using boost library from 'D:/SOFTWARES/vivado2024/install/Vivado/2024.1/tps/boost_1_72_0'
-INFO: [SIM-utils-54] Inspecting design source files for 'tb_tt_um_spi' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -L uvm -prj tb_tt_um_spi_vlog.prj"
-INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
-"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_tt_um_spi_behav xil_defaultlib.tb_tt_um_spi xil_defaultlib.glbl -log elaborate.log"
-Vivado Simulator v2024.1
-Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: D:/SOFTWARES/vivado2024/install/Vivado/2024.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_tt_um_spi_behav xil_defaultlib.tb_tt_um_spi xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-Pass Through NonSizing Optimizer
-Completed static elaboration
-INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
-INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "tb_tt_um_spi_behav -key {Behavioral:sim_1:Functional:tb_tt_um_spi} -tclbatch {tb_tt_um_spi.tcl} -view {D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
-Time resolution is 1 ps
-open_wave_config D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg
-source tb_tt_um_spi.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# run 1000ns
-Starting SPI transaction...
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_tt_um_spi_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 1561.367 ; gain = 0.535
-restart
-INFO: [Wavedata 42-604] Simulation restarted
-run 5 us
-Starting SPI transaction...
-run 5 us
-SPI transaction complete, rx_valid asserted.
-SPI transmission successful.
+launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 1595.270 ; gain = 0.000
 current_wave_config {tb_spi_master_ver1_behav.wcfg}
 tb_spi_master_ver1_behav.wcfg
 add_wave {{/tb_tt_um_spi}} 
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run 5 us
+Starting SPI transaction...
+run 5 us
+run 5 us
+run 5 us
+run 5 us
 current_wave_config {tb_spi_master_ver1_behav.wcfg}
 tb_spi_master_ver1_behav.wcfg
 add_wave {{/tb_tt_um_spi/uut}} 
@@ -370,8 +311,6 @@ INFO: [Wavedata 42-604] Simulation restarted
 run 5 us
 Starting SPI transaction...
 run 5 us
-SPI transaction complete, rx_valid asserted.
-SPI transmission successful.
 current_wave_config {tb_spi_master_ver1_behav.wcfg}
 tb_spi_master_ver1_behav.wcfg
 add_wave {{/tb_tt_um_spi/uut/spi_module}} 
@@ -379,9 +318,6 @@ restart
 INFO: [Wavedata 42-604] Simulation restarted
 run 5 us
 Starting SPI transaction...
-run 5 us
-SPI transaction complete, rx_valid asserted.
-SPI transmission successful.
 save_wave_config {D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg}
 close_sim
 INFO: [Simtcl 6-16] Simulation closed
@@ -398,84 +334,10 @@ INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
 INFO: [USF-XSim-2] XSim::Compile design
 INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
 "xvlog --incr --relax -L uvm -prj tb_tt_um_spi_vlog.prj"
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tt_um_spi
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/src/tb_tt_um_spi.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module tb_tt_um_spi
-INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
-"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_tt_um_spi_behav xil_defaultlib.tb_tt_um_spi xil_defaultlib.glbl -log elaborate.log"
-Vivado Simulator v2024.1
-Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: D:/SOFTWARES/vivado2024/install/Vivado/2024.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_tt_um_spi_behav xil_defaultlib.tb_tt_um_spi xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-Pass Through NonSizing Optimizer
-Completed static elaboration
-Starting simulation data flow analysis
-WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv" Line 8. Module tt_um_spi doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/spi_master_slave.sv" Line 1. Module spi_master_slave_default doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv" Line 8. Module tt_um_spi doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/spi_master_slave.sv" Line 1. Module spi_master_slave_default doesn't have a timescale but at least one module in design has a timescale.
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.spi_master_slave_default
-Compiling module xil_defaultlib.tt_um_spi
-Compiling module xil_defaultlib.tb_tt_um_spi
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot tb_tt_um_spi_behav
-INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "tb_tt_um_spi_behav -key {Behavioral:sim_1:Functional:tb_tt_um_spi} -tclbatch {tb_tt_um_spi.tcl} -view {D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
-Time resolution is 1 ps
-open_wave_config D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg
-source tb_tt_um_spi.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# run 1000ns
-Starting SPI transaction...
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_tt_um_spi_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 1567.527 ; gain = 0.547
-restart
-INFO: [Wavedata 42-604] Simulation restarted
-run 5 us
-Starting SPI transaction...
-run 5 us
-SPI transaction complete, rx_valid asserted.
-SPI transmission successful.
-close_sim
-INFO: [Simtcl 6-16] Simulation closed
-launch_simulation
-Command: launch_simulation 
-INFO: [Vivado 12-12493] Simulation top is 'tb_tt_um_spi'
-WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-72] Using boost library from 'D:/SOFTWARES/vivado2024/install/Vivado/2024.1/tps/boost_1_72_0'
-INFO: [SIM-utils-54] Inspecting design source files for 'tb_tt_um_spi' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -L uvm -prj tb_tt_um_spi_vlog.prj"
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tt_um_spi
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/src/tb_tt_um_spi.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tb_tt_um_spi
-ERROR: [VRFC 10-2989] 'sclk' is not declared [D:/Github/tt10-SPI-8bit/src/tb_tt_um_spi.sv:75]
+ERROR: [VRFC 10-4982] syntax error near 'end' [D:/Github/tt10-SPI-8bit/src/tb_tt_um_spi.sv:65]
+ERROR: [VRFC 10-8549] SystemVerilog keyword 'end' used in incorrect context [D:/Github/tt10-SPI-8bit/src/tb_tt_um_spi.sv:65]
 ERROR: [VRFC 10-8530] module 'tb_tt_um_spi' is ignored due to previous errors [D:/Github/tt10-SPI-8bit/src/tb_tt_um_spi.sv:2]
 INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
 INFO: [USF-XSim-99] Step results log file:'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim/xvlog.log'
@@ -495,32 +357,6 @@ INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
 INFO: [USF-XSim-2] XSim::Compile design
 INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
 "xvlog --incr --relax -L uvm -prj tb_tt_um_spi_vlog.prj"
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tt_um_spi
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/src/tb_tt_um_spi.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tb_tt_um_spi
-ERROR: [VRFC 10-2989] 'sclk' is not declared [D:/Github/tt10-SPI-8bit/src/tb_tt_um_spi.sv:75]
-ERROR: [VRFC 10-8530] module 'tb_tt_um_spi' is ignored due to previous errors [D:/Github/tt10-SPI-8bit/src/tb_tt_um_spi.sv:2]
-INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
-INFO: [USF-XSim-99] Step results log file:'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim/xvlog.log'
-ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim/xvlog.log' file for more information.
-ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
-ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
-launch_simulation
-Command: launch_simulation 
-INFO: [Vivado 12-12493] Simulation top is 'tb_tt_um_spi'
-WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-72] Using boost library from 'D:/SOFTWARES/vivado2024/install/Vivado/2024.1/tps/boost_1_72_0'
-INFO: [SIM-utils-54] Inspecting design source files for 'tb_tt_um_spi' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -L uvm -prj tb_tt_um_spi_vlog.prj"
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tt_um_spi
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/src/tb_tt_um_spi.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module tb_tt_um_spi
 INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
@@ -544,411 +380,6 @@ Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
 Compiling module xil_defaultlib.spi_master_slave_default
 Compiling module xil_defaultlib.tt_um_spi
-Compiling module xil_defaultlib.tb_tt_um_spi
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot tb_tt_um_spi_behav
-INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "tb_tt_um_spi_behav -key {Behavioral:sim_1:Functional:tb_tt_um_spi} -tclbatch {tb_tt_um_spi.tcl} -view {D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
-Time resolution is 1 ps
-open_wave_config D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg
-source tb_tt_um_spi.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# run 1000ns
-Starting SPI transaction...
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_tt_um_spi_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:10 . Memory (MB): peak = 2619.160 ; gain = 0.000
-restart
-INFO: [Wavedata 42-604] Simulation restarted
-run 5 us
-Starting SPI transaction...
-run 5 us
-SPI transaction complete, rx_valid asserted.
-SPI transmission successful.
-close_sim
-INFO: [Simtcl 6-16] Simulation closed
-launch_simulation
-Command: launch_simulation 
-INFO: [Vivado 12-12493] Simulation top is 'tb_tt_um_spi'
-WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-72] Using boost library from 'D:/SOFTWARES/vivado2024/install/Vivado/2024.1/tps/boost_1_72_0'
-INFO: [SIM-utils-54] Inspecting design source files for 'tb_tt_um_spi' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -L uvm -prj tb_tt_um_spi_vlog.prj"
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tt_um_spi
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/src/tb_tt_um_spi.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tb_tt_um_spi
-INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
-"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_tt_um_spi_behav xil_defaultlib.tb_tt_um_spi xil_defaultlib.glbl -log elaborate.log"
-Vivado Simulator v2024.1
-Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: D:/SOFTWARES/vivado2024/install/Vivado/2024.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_tt_um_spi_behav xil_defaultlib.tb_tt_um_spi xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-Pass Through NonSizing Optimizer
-Completed static elaboration
-Starting simulation data flow analysis
-WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv" Line 8. Module tt_um_spi doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/spi_master_slave.sv" Line 1. Module spi_master_slave_default doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv" Line 8. Module tt_um_spi doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/spi_master_slave.sv" Line 1. Module spi_master_slave_default doesn't have a timescale but at least one module in design has a timescale.
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.spi_master_slave_default
-Compiling module xil_defaultlib.tt_um_spi
-Compiling module xil_defaultlib.tb_tt_um_spi
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot tb_tt_um_spi_behav
-INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "tb_tt_um_spi_behav -key {Behavioral:sim_1:Functional:tb_tt_um_spi} -tclbatch {tb_tt_um_spi.tcl} -view {D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
-Time resolution is 1 ps
-open_wave_config D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg
-source tb_tt_um_spi.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# run 1000ns
-Starting SPI transaction...
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_tt_um_spi_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 2619.160 ; gain = 0.000
-restart
-INFO: [Wavedata 42-604] Simulation restarted
-run 5 us
-Starting SPI transaction...
-run 5 us
-SPI transaction complete, rx_valid asserted.
-SPI transmission successful.
-close_sim
-INFO: [Simtcl 6-16] Simulation closed
-launch_simulation
-Command: launch_simulation 
-INFO: [Vivado 12-12493] Simulation top is 'tb_tt_um_spi'
-WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-72] Using boost library from 'D:/SOFTWARES/vivado2024/install/Vivado/2024.1/tps/boost_1_72_0'
-INFO: [SIM-utils-54] Inspecting design source files for 'tb_tt_um_spi' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -L uvm -prj tb_tt_um_spi_vlog.prj"
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tt_um_spi
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/src/tb_tt_um_spi.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tb_tt_um_spi
-INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
-"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_tt_um_spi_behav xil_defaultlib.tb_tt_um_spi xil_defaultlib.glbl -log elaborate.log"
-Vivado Simulator v2024.1
-Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: D:/SOFTWARES/vivado2024/install/Vivado/2024.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_tt_um_spi_behav xil_defaultlib.tb_tt_um_spi xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-Pass Through NonSizing Optimizer
-Completed static elaboration
-Starting simulation data flow analysis
-WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv" Line 8. Module tt_um_spi doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/spi_master_slave.sv" Line 1. Module spi_master_slave_default doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv" Line 8. Module tt_um_spi doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/spi_master_slave.sv" Line 1. Module spi_master_slave_default doesn't have a timescale but at least one module in design has a timescale.
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.spi_master_slave_default
-Compiling module xil_defaultlib.tt_um_spi
-Compiling module xil_defaultlib.tb_tt_um_spi
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot tb_tt_um_spi_behav
-INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "tb_tt_um_spi_behav -key {Behavioral:sim_1:Functional:tb_tt_um_spi} -tclbatch {tb_tt_um_spi.tcl} -view {D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
-Time resolution is 1 ps
-open_wave_config D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg
-source tb_tt_um_spi.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# run 1000ns
-Starting SPI transaction...
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_tt_um_spi_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 2619.160 ; gain = 0.000
-restart
-INFO: [Wavedata 42-604] Simulation restarted
-run 5 us
-Starting SPI transaction...
-run 5 us
-SPI transaction complete, rx_valid asserted.
-SPI transmission successful.
-save_wave_config {D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg}
-close_sim
-INFO: [Simtcl 6-16] Simulation closed
-launch_simulation
-Command: launch_simulation 
-INFO: [Vivado 12-12493] Simulation top is 'tb_tt_um_spi'
-WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-72] Using boost library from 'D:/SOFTWARES/vivado2024/install/Vivado/2024.1/tps/boost_1_72_0'
-INFO: [SIM-utils-54] Inspecting design source files for 'tb_tt_um_spi' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -L uvm -prj tb_tt_um_spi_vlog.prj"
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tt_um_spi
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/src/tb_tt_um_spi.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tb_tt_um_spi
-INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
-"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_tt_um_spi_behav xil_defaultlib.tb_tt_um_spi xil_defaultlib.glbl -log elaborate.log"
-Vivado Simulator v2024.1
-Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: D:/SOFTWARES/vivado2024/install/Vivado/2024.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_tt_um_spi_behav xil_defaultlib.tb_tt_um_spi xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-Pass Through NonSizing Optimizer
-Completed static elaboration
-Starting simulation data flow analysis
-WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv" Line 8. Module tt_um_spi doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/spi_master_slave.sv" Line 1. Module spi_master_slave_default doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv" Line 8. Module tt_um_spi doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/spi_master_slave.sv" Line 1. Module spi_master_slave_default doesn't have a timescale but at least one module in design has a timescale.
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.spi_master_slave_default
-Compiling module xil_defaultlib.tt_um_spi
-Compiling module xil_defaultlib.tb_tt_um_spi
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot tb_tt_um_spi_behav
-INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "tb_tt_um_spi_behav -key {Behavioral:sim_1:Functional:tb_tt_um_spi} -tclbatch {tb_tt_um_spi.tcl} -view {D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
-Time resolution is 1 ps
-open_wave_config D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg
-source tb_tt_um_spi.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# run 1000ns
-Starting SPI transaction...
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_tt_um_spi_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:10 . Memory (MB): peak = 2619.160 ; gain = 0.000
-restart
-INFO: [Wavedata 42-604] Simulation restarted
-run 5 us
-Starting SPI transaction...
-run 5 us
-SPI transaction complete, rx_valid asserted.
-SPI transmission successful.
-close_sim
-INFO: [Simtcl 6-16] Simulation closed
-launch_simulation
-Command: launch_simulation 
-INFO: [Vivado 12-12493] Simulation top is 'tb_tt_um_spi'
-WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-72] Using boost library from 'D:/SOFTWARES/vivado2024/install/Vivado/2024.1/tps/boost_1_72_0'
-INFO: [SIM-utils-54] Inspecting design source files for 'tb_tt_um_spi' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -L uvm -prj tb_tt_um_spi_vlog.prj"
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tt_um_spi
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/src/tb_tt_um_spi.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tb_tt_um_spi
-ERROR: [VRFC 10-2989] 'sclk' is not declared [D:/Github/tt10-SPI-8bit/src/tb_tt_um_spi.sv:145]
-ERROR: [VRFC 10-2989] 'rx_valid' is not declared [D:/Github/tt10-SPI-8bit/src/tb_tt_um_spi.sv:152]
-ERROR: [VRFC 10-8530] module 'tb_tt_um_spi' is ignored due to previous errors [D:/Github/tt10-SPI-8bit/src/tb_tt_um_spi.sv:2]
-INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
-INFO: [USF-XSim-99] Step results log file:'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim/xvlog.log'
-ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim/xvlog.log' file for more information.
-ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
-ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
-launch_simulation
-Command: launch_simulation 
-INFO: [Vivado 12-12493] Simulation top is 'tb_tt_um_spi'
-WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-72] Using boost library from 'D:/SOFTWARES/vivado2024/install/Vivado/2024.1/tps/boost_1_72_0'
-INFO: [SIM-utils-54] Inspecting design source files for 'tb_tt_um_spi' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -L uvm -prj tb_tt_um_spi_vlog.prj"
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tt_um_spi
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/src/tb_tt_um_spi.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tb_tt_um_spi
-INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
-"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_tt_um_spi_behav xil_defaultlib.tb_tt_um_spi xil_defaultlib.glbl -log elaborate.log"
-Vivado Simulator v2024.1
-Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: D:/SOFTWARES/vivado2024/install/Vivado/2024.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_tt_um_spi_behav xil_defaultlib.tb_tt_um_spi xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-Pass Through NonSizing Optimizer
-Completed static elaboration
-Starting simulation data flow analysis
-WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv" Line 8. Module tt_um_spi doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/spi_master_slave.sv" Line 1. Module spi_master_slave_default doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv" Line 8. Module tt_um_spi doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/spi_master_slave.sv" Line 1. Module spi_master_slave_default doesn't have a timescale but at least one module in design has a timescale.
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.spi_master_slave_default
-Compiling module xil_defaultlib.tt_um_spi
-WARNING: [VRFC 10-3705] select index 8 into 'test_data' is out of bounds
-WARNING: [VRFC 10-3705] select index 9 into 'test_data' is out of bounds
-WARNING: [VRFC 10-3705] select index 10 into 'test_data' is out of bounds
-WARNING: [VRFC 10-3705] select index 11 into 'test_data' is out of bounds
-WARNING: [VRFC 10-3705] select index 12 into 'test_data' is out of bounds
-WARNING: [VRFC 10-3705] select index 13 into 'test_data' is out of bounds
-WARNING: [VRFC 10-3705] select index 14 into 'test_data' is out of bounds
-WARNING: [VRFC 10-3705] select index 15 into 'test_data' is out of bounds
-Compiling module xil_defaultlib.tb_tt_um_spi
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot tb_tt_um_spi_behav
-INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "tb_tt_um_spi_behav -key {Behavioral:sim_1:Functional:tb_tt_um_spi} -tclbatch {tb_tt_um_spi.tcl} -view {D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
-Time resolution is 1 ps
-open_wave_config D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg
-source tb_tt_um_spi.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# run 1000ns
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_tt_um_spi_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 2619.160 ; gain = 0.000
-restart
-INFO: [Wavedata 42-604] Simulation restarted
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-close_sim
-INFO: [Simtcl 6-16] Simulation closed
-launch_simulation
-Command: launch_simulation 
-INFO: [Vivado 12-12493] Simulation top is 'tb_tt_um_spi'
-WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-72] Using boost library from 'D:/SOFTWARES/vivado2024/install/Vivado/2024.1/tps/boost_1_72_0'
-INFO: [SIM-utils-54] Inspecting design source files for 'tb_tt_um_spi' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -L uvm -prj tb_tt_um_spi_vlog.prj"
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tt_um_spi
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/src/tb_tt_um_spi.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tb_tt_um_spi
-INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
-"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_tt_um_spi_behav xil_defaultlib.tb_tt_um_spi xil_defaultlib.glbl -log elaborate.log"
-Vivado Simulator v2024.1
-Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: D:/SOFTWARES/vivado2024/install/Vivado/2024.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_tt_um_spi_behav xil_defaultlib.tb_tt_um_spi xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-Pass Through NonSizing Optimizer
-Completed static elaboration
-Starting simulation data flow analysis
-WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv" Line 8. Module tt_um_spi doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/spi_master_slave.sv" Line 1. Module spi_master_slave_default doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv" Line 8. Module tt_um_spi doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/spi_master_slave.sv" Line 1. Module spi_master_slave_default doesn't have a timescale but at least one module in design has a timescale.
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.spi_master_slave_default
-Compiling module xil_defaultlib.tt_um_spi
-WARNING: [VRFC 10-3705] select index 8 into 'test_data' is out of bounds
-WARNING: [VRFC 10-3705] select index 9 into 'test_data' is out of bounds
-WARNING: [VRFC 10-3705] select index 10 into 'test_data' is out of bounds
-WARNING: [VRFC 10-3705] select index 11 into 'test_data' is out of bounds
-WARNING: [VRFC 10-3705] select index 12 into 'test_data' is out of bounds
-WARNING: [VRFC 10-3705] select index 13 into 'test_data' is out of bounds
-WARNING: [VRFC 10-3705] select index 14 into 'test_data' is out of bounds
-WARNING: [VRFC 10-3705] select index 15 into 'test_data' is out of bounds
 Compiling module xil_defaultlib.tb_tt_um_spi
 Compiling module xil_defaultlib.glbl
 Built simulation snapshot tb_tt_um_spi_behav
@@ -971,14 +402,635 @@ source tb_tt_um_spi.tcl
 #   }
 # }
 # run 1000ns
+Starting SPI transaction...
 INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_tt_um_spi_behav' loaded.
 INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 2619.160 ; gain = 0.000
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 1689.488 ; gain = 0.000
 restart
 INFO: [Wavedata 42-604] Simulation restarted
 run 5 us
+Starting SPI transaction...
 run 5 us
 run 5 us
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'tb_tt_um_spi'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'D:/SOFTWARES/vivado2024/install/Vivado/2024.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_tt_um_spi' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_tt_um_spi_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/src/spi_master_slave.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module spi_master_slave
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tt_um_spi
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/src/tb_tt_um_spi.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_tt_um_spi
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_tt_um_spi_behav xil_defaultlib.tb_tt_um_spi xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2024.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/SOFTWARES/vivado2024/install/Vivado/2024.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_tt_um_spi_behav xil_defaultlib.tb_tt_um_spi xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv" Line 8. Module tt_um_spi doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/spi_master_slave.sv" Line 1. Module spi_master_slave_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv" Line 8. Module tt_um_spi doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/spi_master_slave.sv" Line 1. Module spi_master_slave_default doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.spi_master_slave_default
+Compiling module xil_defaultlib.tt_um_spi
+Compiling module xil_defaultlib.tb_tt_um_spi
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_tt_um_spi_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_tt_um_spi_behav -key {Behavioral:sim_1:Functional:tb_tt_um_spi} -tclbatch {tb_tt_um_spi.tcl} -view {D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg
+source tb_tt_um_spi.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Starting SPI transaction...
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_tt_um_spi_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 2634.098 ; gain = 0.000
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run 5 us
+Starting SPI transaction...
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'tb_tt_um_spi'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'D:/SOFTWARES/vivado2024/install/Vivado/2024.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_tt_um_spi' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_tt_um_spi_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/src/spi_master_slave.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module spi_master_slave
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tt_um_spi
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/src/tb_tt_um_spi.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_tt_um_spi
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_tt_um_spi_behav xil_defaultlib.tb_tt_um_spi xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2024.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/SOFTWARES/vivado2024/install/Vivado/2024.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_tt_um_spi_behav xil_defaultlib.tb_tt_um_spi xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv" Line 8. Module tt_um_spi doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/spi_master_slave.sv" Line 1. Module spi_master_slave_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv" Line 8. Module tt_um_spi doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/spi_master_slave.sv" Line 1. Module spi_master_slave_default doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.spi_master_slave_default
+Compiling module xil_defaultlib.tt_um_spi
+Compiling module xil_defaultlib.tb_tt_um_spi
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_tt_um_spi_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_tt_um_spi_behav -key {Behavioral:sim_1:Functional:tb_tt_um_spi} -tclbatch {tb_tt_um_spi.tcl} -view {D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg
+source tb_tt_um_spi.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Starting SPI transaction...
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_tt_um_spi_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:07 ; elapsed = 00:00:10 . Memory (MB): peak = 2634.098 ; gain = 0.000
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run 5 us
+Starting SPI transaction...
+run 5 us
+run 5 us
+run 5 us
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run 5 us
+Starting SPI transaction...
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run 5 us
+Starting SPI transaction...
+current_wave_config {tb_spi_master_ver1_behav.wcfg}
+tb_spi_master_ver1_behav.wcfg
+add_wave {{/tb_tt_um_spi/uut/spi_module}} 
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run 5 us
+Starting SPI transaction...
+save_wave_config {D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg}
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'tb_tt_um_spi'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'D:/SOFTWARES/vivado2024/install/Vivado/2024.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_tt_um_spi' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_tt_um_spi_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/src/spi_master_slave.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module spi_master_slave
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tt_um_spi
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/src/tb_tt_um_spi.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_tt_um_spi
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_tt_um_spi_behav xil_defaultlib.tb_tt_um_spi xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2024.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/SOFTWARES/vivado2024/install/Vivado/2024.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_tt_um_spi_behav xil_defaultlib.tb_tt_um_spi xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv" Line 8. Module tt_um_spi doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/spi_master_slave.sv" Line 1. Module spi_master_slave_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv" Line 8. Module tt_um_spi doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/spi_master_slave.sv" Line 1. Module spi_master_slave_default doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.spi_master_slave_default
+Compiling module xil_defaultlib.tt_um_spi
+Compiling module xil_defaultlib.tb_tt_um_spi
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_tt_um_spi_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_tt_um_spi_behav -key {Behavioral:sim_1:Functional:tb_tt_um_spi} -tclbatch {tb_tt_um_spi.tcl} -view {D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg
+source tb_tt_um_spi.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Starting SPI transaction...
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_tt_um_spi_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 2639.559 ; gain = 0.000
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run 5 us
+Starting SPI transaction...
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'tb_tt_um_spi'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'D:/SOFTWARES/vivado2024/install/Vivado/2024.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_tt_um_spi' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_tt_um_spi_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/src/spi_master_slave.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module spi_master_slave
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tt_um_spi
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/src/tb_tt_um_spi.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_tt_um_spi
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_tt_um_spi_behav xil_defaultlib.tb_tt_um_spi xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2024.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/SOFTWARES/vivado2024/install/Vivado/2024.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_tt_um_spi_behav xil_defaultlib.tb_tt_um_spi xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv" Line 8. Module tt_um_spi doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/spi_master_slave.sv" Line 1. Module spi_master_slave_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv" Line 8. Module tt_um_spi doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/spi_master_slave.sv" Line 1. Module spi_master_slave_default doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.spi_master_slave_default
+Compiling module xil_defaultlib.tt_um_spi
+Compiling module xil_defaultlib.tb_tt_um_spi
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_tt_um_spi_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_tt_um_spi_behav -key {Behavioral:sim_1:Functional:tb_tt_um_spi} -tclbatch {tb_tt_um_spi.tcl} -view {D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg
+source tb_tt_um_spi.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Starting SPI transaction...
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_tt_um_spi_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:09 . Memory (MB): peak = 2639.559 ; gain = 0.000
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run 5 us
+Starting SPI transaction...
+run 5 us
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'tb_tt_um_spi'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'D:/SOFTWARES/vivado2024/install/Vivado/2024.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_tt_um_spi' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_tt_um_spi_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/src/spi_master_slave.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module spi_master_slave
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tt_um_spi
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/src/tb_tt_um_spi.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_tt_um_spi
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_tt_um_spi_behav xil_defaultlib.tb_tt_um_spi xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2024.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/SOFTWARES/vivado2024/install/Vivado/2024.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_tt_um_spi_behav xil_defaultlib.tb_tt_um_spi xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv" Line 8. Module tt_um_spi doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/spi_master_slave.sv" Line 1. Module spi_master_slave_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv" Line 8. Module tt_um_spi doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/spi_master_slave.sv" Line 1. Module spi_master_slave_default doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.spi_master_slave_default
+Compiling module xil_defaultlib.tt_um_spi
+Compiling module xil_defaultlib.tb_tt_um_spi
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_tt_um_spi_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_tt_um_spi_behav -key {Behavioral:sim_1:Functional:tb_tt_um_spi} -tclbatch {tb_tt_um_spi.tcl} -view {D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg
+source tb_tt_um_spi.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Starting SPI transaction...
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_tt_um_spi_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 2639.559 ; gain = 0.000
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run 5 us
+Starting SPI transaction...
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+run 5 us
+set_property top spi_controller_tb_ver2 [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'spi_controller_tb_ver2'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+boost::filesystem::remove: The process cannot access the file because it is being used by another process: "D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim/simulate.log"
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'spi_controller_tb_ver2'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'D:/SOFTWARES/vivado2024/install/Vivado/2024.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'spi_controller_tb_ver2' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj spi_controller_tb_ver2_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.srcs/sources_1/new/spi_controller_ver2.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module spi_controller_ver2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.srcs/sim_1/new/spi_controller_tb_ver2.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module spi_controller_tb_ver2
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot spi_controller_tb_ver2_behav xil_defaultlib.spi_controller_tb_ver2 xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2024.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/SOFTWARES/vivado2024/install/Vivado/2024.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot spi_controller_tb_ver2_behav xil_defaultlib.spi_controller_tb_ver2 xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+ERROR: [VRFC 10-3180] cannot find port 'data' on this module [D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.srcs/sources_1/new/spi_controller_ver2.sv:57]
+ERROR: [VRFC 10-3180] cannot find port 'channel_id' on this module [D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.srcs/sources_1/new/spi_controller_ver2.sv:56]
+ERROR: [VRFC 10-3180] cannot find port 'din' on this module [D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.srcs/sources_1/new/spi_controller_ver2.sv:55]
+ERROR: [VRFC 10-3180] cannot find port 'adc_reg_data' on this module [D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.srcs/sources_1/new/spi_controller_ver2.sv:51]
+ERROR: [VRFC 10-3180] cannot find port 'tx_start' on this module [D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.srcs/sources_1/new/spi_controller_ver2.sv:50]
+ERROR: [VRFC 10-3180] cannot find port 'rx_start' on this module [D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.srcs/sources_1/new/spi_controller_ver2.sv:49]
+ERROR: [VRFC 10-8530] module 'spi_master_slave_ver2_default' is ignored due to previous errors [D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.srcs/sources_1/new/spi_master_slave_ver2.sv:1]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-99] Step results log file:'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 2643.766 ; gain = 0.000
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+set_property top tb_spi_master_slave_ver2 [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'tb_spi_master_slave_ver2'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'D:/SOFTWARES/vivado2024/install/Vivado/2024.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_spi_master_slave_ver2' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_spi_master_slave_ver2_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_spi_master_slave_ver2_behav xil_defaultlib.tb_spi_master_slave_ver2 xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2024.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/SOFTWARES/vivado2024/install/Vivado/2024.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_spi_master_slave_ver2_behav xil_defaultlib.tb_spi_master_slave_ver2 xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_spi_master_slave_ver2_behav -key {Behavioral:sim_1:Functional:tb_spi_master_slave_ver2} -tclbatch {tb_spi_master_slave_ver2.tcl} -view {D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg
+WARNING: Simulation object /tb_tt_um_spi/uut/spi_module/clk was not found in the design.
+WARNING: Simulation object /tb_tt_um_spi/uut/spi_module/reset was not found in the design.
+WARNING: Simulation object /tb_tt_um_spi/uut/spi_module/slave_rx_start was not found in the design.
+WARNING: Simulation object /tb_tt_um_spi/uut/spi_module/slave_tx_start was not found in the design.
+WARNING: Simulation object /tb_tt_um_spi/uut/spi_module/input_reg_data was not found in the design.
+WARNING: Simulation object /tb_tt_um_spi/uut/spi_module/dout_miso was not found in the design.
+WARNING: Simulation object /tb_tt_um_spi/uut/spi_module/cs_bar was not found in the design.
+WARNING: Simulation object /tb_tt_um_spi/uut/spi_module/sclk was not found in the design.
+WARNING: Simulation object /tb_tt_um_spi/uut/spi_module/din_mosi was not found in the design.
+WARNING: Simulation object /tb_tt_um_spi/uut/spi_module/output_reg_data was not found in the design.
+WARNING: Simulation object /tb_tt_um_spi/uut/spi_module/rx_valid was not found in the design.
+WARNING: Simulation object /tb_tt_um_spi/uut/spi_module/tx_done was not found in the design.
+WARNING: Simulation object /tb_tt_um_spi/uut/spi_module/state was not found in the design.
+WARNING: Simulation object /tb_tt_um_spi/uut/spi_module/rx_shift_reg was not found in the design.
+WARNING: Simulation object /tb_tt_um_spi/uut/spi_module/tx_shift_reg was not found in the design.
+WARNING: Simulation object /tb_tt_um_spi/uut/spi_module/rx_bit_cnt was not found in the design.
+WARNING: Simulation object /tb_tt_um_spi/uut/spi_module/tx_bit_cnt was not found in the design.
+WARNING: Simulation object /tb_tt_um_spi/uut/spi_module/sclk_en was not found in the design.
+WARNING: Simulation object /tb_tt_um_spi/uut/spi_module/tx_ena was not found in the design.
+WARNING: Simulation object /tb_tt_um_spi/uut/spi_module/rx_ena was not found in the design.
+WARNING: Simulation object /tb_tt_um_spi/uut/spi_module/rx_state_flag was not found in the design.
+WARNING: Simulation object /tb_tt_um_spi/uut/spi_module/tx_state_flag was not found in the design.
+WARNING: Simulation object /tb_tt_um_spi/uut/spi_module/wait_cnt was not found in the design.
+WARNING: Simulation object /tb_tt_um_spi/uut/spi_module/clk_div_cnt was not found in the design.
+WARNING: Simulation object /tb_tt_um_spi/uut/spi_module/CLK_DIV was not found in the design.
+WARNING: Simulation object /tb_tt_um_spi/uut/spi_module/CLK_DIV_BITS was not found in the design.
+WARNING: Simulation object /tb_tt_um_spi/uut/spi_module/WAIT_BITS was not found in the design.
+WARNING: Simulation object /tb_tt_um_spi/uut/spi_module/DATA_WIDTH was not found in the design.
+WARNING: Simulation object /tb_tt_um_spi/uut/spi_module/DATA_WIDTH_BITS was not found in the design.
+source tb_spi_master_slave_ver2.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_spi_master_slave_ver2_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 2656.906 ; gain = 13.141
+run 5 us
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+current_wave_config {tb_spi_master_ver1_behav.wcfg}
+tb_spi_master_ver1_behav.wcfg
+add_wave {{/tb_spi_master_slave_ver2/uut}} 
+run 5 us
+run 5 us
+set_property top tb_tt_um_spi [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'tb_tt_um_spi'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+boost::filesystem::remove: The process cannot access the file because it is being used by another process: "D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim/simulate.log"
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'tb_tt_um_spi'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'D:/SOFTWARES/vivado2024/install/Vivado/2024.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_tt_um_spi' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_tt_um_spi_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/src/spi_master_slave.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module spi_master_slave
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tt_um_spi
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/src/tb_tt_um_spi.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_tt_um_spi
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_tt_um_spi_behav xil_defaultlib.tb_tt_um_spi xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2024.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/SOFTWARES/vivado2024/install/Vivado/2024.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_tt_um_spi_behav xil_defaultlib.tb_tt_um_spi xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv" Line 8. Module tt_um_spi doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/spi_master_slave.sv" Line 1. Module spi_master_slave_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv" Line 8. Module tt_um_spi doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/spi_master_slave.sv" Line 1. Module spi_master_slave_default doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.spi_master_slave_default
+Compiling module xil_defaultlib.tt_um_spi
+Compiling module xil_defaultlib.tb_tt_um_spi
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_tt_um_spi_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '5' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_tt_um_spi_behav -key {Behavioral:sim_1:Functional:tb_tt_um_spi} -tclbatch {tb_tt_um_spi.tcl} -view {D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg
+source tb_tt_um_spi.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Starting SPI transaction...
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_tt_um_spi_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:12 . Memory (MB): peak = 2656.906 ; gain = 0.000
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run 5 us
+Starting SPI transaction...
+run 5 us
+SPI transaction complete, rx_valid asserted.
+SPI transmission successful.
 close_sim
 INFO: [Simtcl 6-16] Simulation closed
 launch_simulation
@@ -1026,16 +1078,17 @@ source tb_tt_um_spi.tcl
 #   }
 # }
 # run 1000ns
+Starting SPI transaction...
 INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_tt_um_spi_behav' loaded.
 INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2619.160 ; gain = 0.000
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 2656.906 ; gain = 0.000
 restart
 INFO: [Wavedata 42-604] Simulation restarted
 run 5 us
+Starting SPI transaction...
 run 5 us
-run 5 us
-add_files -norecurse D:/Github/tt10-SPI-8bit/src/spi_master_slave.sv
-WARNING: [filemgmt 56-12] File 'D:/Github/tt10-SPI-8bit/src/spi_master_slave.sv' cannot be added to the project because it already exists in the project, skipping this file
+SPI transaction complete, rx_valid asserted.
+SPI transmission successful.
 close_sim
 INFO: [Simtcl 6-16] Simulation closed
 launch_simulation
@@ -1057,7 +1110,7 @@ INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/src/t
 INFO: [VRFC 10-311] analyzing module tt_um_spi
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/src/tb_tt_um_spi.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module tb_tt_um_spi
-INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
 INFO: [USF-XSim-3] XSim::Elaborate design
 INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
 "xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_tt_um_spi_behav xil_defaultlib.tb_tt_um_spi xil_defaultlib.glbl -log elaborate.log"
@@ -1068,6 +1121,7 @@ Running: D:/SOFTWARES/vivado2024/install/Vivado/2024.1/bin/unwrapped/win64.o/xel
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3129] assignment to input 'ui_in' [D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv:25]
 Completed static elaboration
 Starting simulation data flow analysis
 WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv" Line 8. Module tt_um_spi doesn't have a timescale but at least one module in design has a timescale.
@@ -1078,99 +1132,6 @@ Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
 Compiling module xil_defaultlib.spi_master_slave_default
 Compiling module xil_defaultlib.tt_um_spi
-WARNING: [VRFC 10-3705] select index 8 into 'test_data' is out of bounds
-WARNING: [VRFC 10-3705] select index 9 into 'test_data' is out of bounds
-WARNING: [VRFC 10-3705] select index 10 into 'test_data' is out of bounds
-WARNING: [VRFC 10-3705] select index 11 into 'test_data' is out of bounds
-WARNING: [VRFC 10-3705] select index 12 into 'test_data' is out of bounds
-WARNING: [VRFC 10-3705] select index 13 into 'test_data' is out of bounds
-WARNING: [VRFC 10-3705] select index 14 into 'test_data' is out of bounds
-WARNING: [VRFC 10-3705] select index 15 into 'test_data' is out of bounds
-Compiling module xil_defaultlib.tb_tt_um_spi
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot tb_tt_um_spi_behav
-INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "tb_tt_um_spi_behav -key {Behavioral:sim_1:Functional:tb_tt_um_spi} -tclbatch {tb_tt_um_spi.tcl} -view {D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
-Time resolution is 1 ps
-open_wave_config D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg
-source tb_tt_um_spi.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# run 1000ns
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_tt_um_spi_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 2619.160 ; gain = 0.000
-restart
-INFO: [Wavedata 42-604] Simulation restarted
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-run 5 us
-close_sim
-INFO: [Simtcl 6-16] Simulation closed
-launch_simulation
-Command: launch_simulation 
-INFO: [Vivado 12-12493] Simulation top is 'tb_tt_um_spi'
-WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-72] Using boost library from 'D:/SOFTWARES/vivado2024/install/Vivado/2024.1/tps/boost_1_72_0'
-INFO: [SIM-utils-54] Inspecting design source files for 'tb_tt_um_spi' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -L uvm -prj tb_tt_um_spi_vlog.prj"
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/src/spi_master_slave.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module spi_master_slave
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tt_um_spi
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/src/tb_tt_um_spi.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tb_tt_um_spi
-INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
-"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_tt_um_spi_behav xil_defaultlib.tb_tt_um_spi xil_defaultlib.glbl -log elaborate.log"
-Vivado Simulator v2024.1
-Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: D:/SOFTWARES/vivado2024/install/Vivado/2024.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_tt_um_spi_behav xil_defaultlib.tb_tt_um_spi xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-Pass Through NonSizing Optimizer
-Completed static elaboration
-Starting simulation data flow analysis
-WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv" Line 8. Module tt_um_spi doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/spi_master_slave.sv" Line 1. Module spi_master_slave_default doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv" Line 8. Module tt_um_spi doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/spi_master_slave.sv" Line 1. Module spi_master_slave_default doesn't have a timescale but at least one module in design has a timescale.
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.spi_master_slave_default
-Compiling module xil_defaultlib.tt_um_spi
-WARNING: [VRFC 10-3705] select index 8 into 'test_data' is out of bounds
-WARNING: [VRFC 10-3705] select index 9 into 'test_data' is out of bounds
-WARNING: [VRFC 10-3705] select index 10 into 'test_data' is out of bounds
-WARNING: [VRFC 10-3705] select index 11 into 'test_data' is out of bounds
-WARNING: [VRFC 10-3705] select index 12 into 'test_data' is out of bounds
-WARNING: [VRFC 10-3705] select index 13 into 'test_data' is out of bounds
-WARNING: [VRFC 10-3705] select index 14 into 'test_data' is out of bounds
-WARNING: [VRFC 10-3705] select index 15 into 'test_data' is out of bounds
 Compiling module xil_defaultlib.tb_tt_um_spi
 Compiling module xil_defaultlib.glbl
 Built simulation snapshot tb_tt_um_spi_behav
@@ -1193,15 +1154,17 @@ source tb_tt_um_spi.tcl
 #   }
 # }
 # run 1000ns
+Starting SPI transaction...
 INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_tt_um_spi_behav' loaded.
 INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 2619.160 ; gain = 0.000
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 2659.352 ; gain = 2.445
 restart
 INFO: [Wavedata 42-604] Simulation restarted
 run 5 us
+Starting SPI transaction...
 run 5 us
-run 5 us
-run 5 us
+SPI transaction complete, rx_valid asserted.
+SPI transmission successful.
 close_sim
 INFO: [Simtcl 6-16] Simulation closed
 launch_simulation
@@ -1244,14 +1207,6 @@ Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
 Compiling module xil_defaultlib.spi_master_slave_default
 Compiling module xil_defaultlib.tt_um_spi
-WARNING: [VRFC 10-3705] select index 8 into 'test_data' is out of bounds
-WARNING: [VRFC 10-3705] select index 9 into 'test_data' is out of bounds
-WARNING: [VRFC 10-3705] select index 10 into 'test_data' is out of bounds
-WARNING: [VRFC 10-3705] select index 11 into 'test_data' is out of bounds
-WARNING: [VRFC 10-3705] select index 12 into 'test_data' is out of bounds
-WARNING: [VRFC 10-3705] select index 13 into 'test_data' is out of bounds
-WARNING: [VRFC 10-3705] select index 14 into 'test_data' is out of bounds
-WARNING: [VRFC 10-3705] select index 15 into 'test_data' is out of bounds
 Compiling module xil_defaultlib.tb_tt_um_spi
 Compiling module xil_defaultlib.glbl
 Built simulation snapshot tb_tt_um_spi_behav
@@ -1274,21 +1229,168 @@ source tb_tt_um_spi.tcl
 #   }
 # }
 # run 1000ns
+Starting SPI transaction...
 INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_tt_um_spi_behav' loaded.
 INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 2649.641 ; gain = 0.000
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 2659.352 ; gain = 0.000
 restart
 INFO: [Wavedata 42-604] Simulation restarted
 run 5 us
+Starting SPI transaction...
 run 5 us
+SPI transaction complete, rx_valid asserted.
+SPI transmission successful.
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'tb_tt_um_spi'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'D:/SOFTWARES/vivado2024/install/Vivado/2024.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_tt_um_spi' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_tt_um_spi_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/src/spi_master_slave.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module spi_master_slave
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tt_um_spi
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/src/tb_tt_um_spi.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_tt_um_spi
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_tt_um_spi_behav xil_defaultlib.tb_tt_um_spi xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2024.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/SOFTWARES/vivado2024/install/Vivado/2024.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_tt_um_spi_behav xil_defaultlib.tb_tt_um_spi xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv" Line 8. Module tt_um_spi doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/spi_master_slave.sv" Line 1. Module spi_master_slave_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv" Line 8. Module tt_um_spi doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/spi_master_slave.sv" Line 1. Module spi_master_slave_default doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.spi_master_slave_default
+Compiling module xil_defaultlib.tt_um_spi
+Compiling module xil_defaultlib.tb_tt_um_spi
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_tt_um_spi_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_tt_um_spi_behav -key {Behavioral:sim_1:Functional:tb_tt_um_spi} -tclbatch {tb_tt_um_spi.tcl} -view {D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg
+source tb_tt_um_spi.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Starting SPI transaction...
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_tt_um_spi_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 2659.352 ; gain = 0.000
+restart
+INFO: [Wavedata 42-604] Simulation restarted
 run 5 us
+Starting SPI transaction...
 run 5 us
+SPI transaction complete, rx_valid asserted.
+SPI transmission successful.
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'tb_tt_um_spi'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'D:/SOFTWARES/vivado2024/install/Vivado/2024.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_tt_um_spi' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_tt_um_spi_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/src/spi_master_slave.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module spi_master_slave
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tt_um_spi
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Github/tt10-SPI-8bit/src/tb_tt_um_spi.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_tt_um_spi
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_tt_um_spi_behav xil_defaultlib.tb_tt_um_spi xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2024.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/SOFTWARES/vivado2024/install/Vivado/2024.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_tt_um_spi_behav xil_defaultlib.tb_tt_um_spi xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv" Line 8. Module tt_um_spi doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/spi_master_slave.sv" Line 1. Module spi_master_slave_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv" Line 8. Module tt_um_spi doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/spi_master_slave.sv" Line 1. Module spi_master_slave_default doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.spi_master_slave_default
+Compiling module xil_defaultlib.tt_um_spi
+Compiling module xil_defaultlib.tb_tt_um_spi
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_tt_um_spi_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Github/tt10-SPI-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_tt_um_spi_behav -key {Behavioral:sim_1:Functional:tb_tt_um_spi} -tclbatch {tb_tt_um_spi.tcl} -view {D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config D:/Github/tt10-SPI-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg
+source tb_tt_um_spi.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Starting SPI transaction...
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_tt_um_spi_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 2659.352 ; gain = 0.000
+restart
+INFO: [Wavedata 42-604] Simulation restarted
 run 5 us
+Starting SPI transaction...
 run 5 us
-run 5 us
-run 5 us
-run 5 us
+SPI transaction complete, rx_valid asserted.
+SPI transmission successful.
 close_sim
 INFO: [Simtcl 6-16] Simulation closed
 exit
-INFO: [Common 17-206] Exiting Vivado at Sun Feb  2 18:39:56 2025...
+INFO: [Common 17-206] Exiting Vivado at Sat Feb  1 22:58:44 2025...

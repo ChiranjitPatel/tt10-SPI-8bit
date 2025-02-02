@@ -15,6 +15,14 @@ Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
 Compiling module xil_defaultlib.spi_master_slave_default
 Compiling module xil_defaultlib.tt_um_spi
+WARNING: [VRFC 10-3705] select index 8 into 'test_data' is out of bounds
+WARNING: [VRFC 10-3705] select index 9 into 'test_data' is out of bounds
+WARNING: [VRFC 10-3705] select index 10 into 'test_data' is out of bounds
+WARNING: [VRFC 10-3705] select index 11 into 'test_data' is out of bounds
+WARNING: [VRFC 10-3705] select index 12 into 'test_data' is out of bounds
+WARNING: [VRFC 10-3705] select index 13 into 'test_data' is out of bounds
+WARNING: [VRFC 10-3705] select index 14 into 'test_data' is out of bounds
+WARNING: [VRFC 10-3705] select index 15 into 'test_data' is out of bounds
 Compiling module xil_defaultlib.tb_tt_um_spi
 Compiling module xil_defaultlib.glbl
 Built simulation snapshot tb_tt_um_spi_behav

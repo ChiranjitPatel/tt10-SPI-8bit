@@ -3,14 +3,10 @@ module spi_master_slave (
     reset,
 	slave_rx_start,
 	slave_tx_start,
-	// input_reg_data,
     dout_miso, 	
-	// loopback,
-	// din_mosi_ext,
     cs_bar,       
     sclk,
 	din_mosi,	
-    // output_reg_data,
     rx_valid,
 	tx_done
 );
@@ -20,18 +16,16 @@ module spi_master_slave (
 	input	logic reset;		
 	input 	logic slave_rx_start;       		// rx_start spi transfer
 	input 	logic slave_tx_start;       		// tx_start spi transfer
-	 	logic [7:0] input_reg_data; 		// 32-bit register output_reg_data write into slave
 	input	logic dout_miso;        			// master In, Slave Out (Data from the ADC)
-	// input	logic loopback;                     // to loopback the serial data back into slave
-	// output	logic din_mosi_ext;                 // assigning this as a external pin, for testing purposes
 	output	logic cs_bar;       				// chip select, active low (to the ADC)
 	output	logic sclk;         				// spi clock - 10 MHz
 	output 	logic din_mosi;         			// spi output_reg_data out - ADC output_reg_data in
-		logic [7:0] output_reg_data;  		// output_reg_data 
 	output	logic rx_valid;         			// output_reg_data rx valid signal
 	output 	logic tx_done;         				// spi tx completed flag
 	
- 
+	logic [7:0] input_reg_data; 		// 32-bit register output_reg_data write into slave
+	logic [7:0] output_reg_data;  		// output_reg_data 
+
     // Param
     localparam integer CLK_DIV = 10; 					// Divide the system clock to gen sclk
     localparam integer CLK_DIV_BITS = $clog2(CLK_DIV);
@@ -61,7 +55,6 @@ module spi_master_slave (
     logic tx_state_flag;
     logic [WAIT_BITS-1:0] wait_cnt;
     logic [CLK_DIV_BITS-1:0] clk_div_cnt;
-	// logic sclk;
 
     // Clock gen
     always_ff @(posedge clk or posedge reset) begin
@@ -100,6 +93,7 @@ module spi_master_slave (
 			tx_done <= 0;
 			rx_state_flag <= 0;
 			tx_state_flag <= 0;
+			input_reg_data <= 0;
 			output_reg_data <= 0;
 			din_mosi <= 0;
 			
@@ -117,6 +111,7 @@ module spi_master_slave (
 						wait_cnt <= 0;
 						rx_shift_reg <= {rx_shift_reg[DATA_WIDTH-2:0], dout_miso};
 						tx_shift_reg <= input_reg_data;
+						input_reg_data <= rx_shift_reg; // added extra as loopback
 						rx_valid <= 0;
 						tx_done <= 0;
 						rx_state_flag <= 0;
@@ -153,9 +148,7 @@ module spi_master_slave (
                     end
 					
 					if (sclk == 1 && clk_div_cnt == 0) begin
-						// rx_shift_reg <= {rx_shift_reg[DATA_WIDTH-2:0], dout_miso}; // Shift in output_reg_data from ADC	
-						rx_shift_reg <= {rx_shift_reg[DATA_WIDTH-2:0], din_mosi}; // Shift in output_reg_data from ADC	
-						// din_mosi_ext <= din_mosi;
+						rx_shift_reg <= {rx_shift_reg[DATA_WIDTH-2:0], dout_miso}; // Shift in output_reg_data from ADC	
 						if (rx_bit_cnt == DATA_WIDTH) begin
 							rx_state_flag <= 1;
 						end
@@ -171,14 +164,6 @@ module spi_master_slave (
 					else begin
 						state <= TRANSFER;
 					end	
-					
-					// if (loopback == 0) begin
-						// din_mosi_ext <= din_mosi;
-					// end
-					// else begin
-						// din_mosi_ext <= din_mosi;
-					// end
-						
 				end
 
 				FINISH: begin
