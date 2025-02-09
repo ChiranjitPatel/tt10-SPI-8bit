@@ -3,10 +3,10 @@ module spi_controller_ver2(
 	reset,
 	rx_start,
 	tx_start,
-    dout_miso, 	
-    cs_bar,       
-    sclk,
-	din,
+    adc_dout_miso, 	
+    adc_cs_bar,       
+    adc_sclk,
+	adc_din,
 	channel_id,
 	data,
 	rx_valid,
@@ -18,10 +18,10 @@ module spi_controller_ver2(
 	input 	logic	reset;
 	input 	logic	rx_start;
 	input 	logic	tx_start;
-    input 	logic	dout_miso; 	
-    output	logic	cs_bar;       
-    output	logic	sclk;
-	output	logic	din;
+    input 	logic	adc_dout_miso; 	
+    output	logic	adc_cs_bar;       
+    output	logic	adc_sclk;
+	output	logic	adc_din;
 	output	logic	[3:0] channel_id;
 	output	logic	[11:0] data;
 	output	logic	rx_valid;
@@ -49,10 +49,10 @@ module spi_controller_ver2(
 		.rx_start(rx_start),
 		.tx_start(tx_start),
 	    .adc_reg_data(adc_mode_control[current_set_idx]),
-	    .dout_miso(dout_miso),
-        .cs_bar(cs_bar),  
-        .sclk(sclk),
-        .din(din),	
+	    .adc_dout_miso(adc_dout_miso),
+        .adc_cs_bar(adc_cs_bar),  
+        .adc_sclk(adc_sclk),
+        .adc_din(adc_din),	
         .channel_id(channel_id), 
         .data(data),
         .rx_valid(rx_valid),

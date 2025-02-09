@@ -1,28 +1,17 @@
 Vivado Simulator v2024.1
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: D:/SOFTWARES/vivado2024/install/Vivado/2024.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_tt_um_spi_behav xil_defaultlib.tb_tt_um_spi xil_defaultlib.glbl -log elaborate.log 
+Running: D:/Xilinx/Vivado/2024.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_spi_master_slave_ver2_behav xil_defaultlib.tb_spi_master_slave_ver2 xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
 Completed static elaboration
 Starting simulation data flow analysis
-WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv" Line 8. Module tt_um_spi doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/spi_master_slave.sv" Line 1. Module spi_master_slave_default doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/tt_um_spi.sv" Line 8. Module tt_um_spi doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/Github/tt10-SPI-8bit/src/spi_master_slave.sv" Line 1. Module spi_master_slave_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4100] "C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.spi_master_slave_default
-Compiling module xil_defaultlib.tt_um_spi
-WARNING: [VRFC 10-3705] select index 8 into 'test_data' is out of bounds
-WARNING: [VRFC 10-3705] select index 9 into 'test_data' is out of bounds
-WARNING: [VRFC 10-3705] select index 10 into 'test_data' is out of bounds
-WARNING: [VRFC 10-3705] select index 11 into 'test_data' is out of bounds
-WARNING: [VRFC 10-3705] select index 12 into 'test_data' is out of bounds
-WARNING: [VRFC 10-3705] select index 13 into 'test_data' is out of bounds
-WARNING: [VRFC 10-3705] select index 14 into 'test_data' is out of bounds
-WARNING: [VRFC 10-3705] select index 15 into 'test_data' is out of bounds
-Compiling module xil_defaultlib.tb_tt_um_spi
+Compiling module xil_defaultlib.spi_master_slave_ver2_default
+Compiling module xil_defaultlib.tb_spi_master_slave_ver2
 Compiling module xil_defaultlib.glbl
-Built simulation snapshot tb_tt_um_spi_behav
+Built simulation snapshot tb_spi_master_slave_ver2_behav

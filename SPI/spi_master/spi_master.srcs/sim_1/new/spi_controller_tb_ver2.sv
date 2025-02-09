@@ -8,10 +8,10 @@ module spi_controller_tb_ver2;
     logic reset;
     logic rx_start;
     logic tx_start;
-    logic dout_miso;
-    logic cs_bar;   
-    logic sclk;
-	logic din;
+    logic adc_dout_miso;
+    logic adc_cs_bar;   
+    logic adc_sclk;
+	logic adc_din;
 	logic [3:0] channel_id;
 	logic [11:0] data;
 	logic rx_valid;
@@ -23,10 +23,10 @@ module spi_controller_tb_ver2;
         .reset(reset),
         .rx_start(rx_start),
         .tx_start(tx_start),
-        .dout_miso(dout_miso),
-        .cs_bar(cs_bar),   
-        .sclk(sclk),
-        .din(din),
+        .adc_dout_miso(adc_dout_miso),
+        .adc_cs_bar(adc_cs_bar),   
+        .adc_sclk(adc_sclk),
+        .adc_din(adc_din),
 	    .channel_id(channel_id),
 	    .data(data),
 	    .rx_valid(rx_valid),
@@ -55,7 +55,7 @@ module spi_controller_tb_ver2;
         reset = 1;
         rx_start = 0;
         tx_start = 0;
-		dout_miso = 0;
+		adc_dout_miso = 0;
 		
         // remove reset
         #200;
@@ -76,8 +76,8 @@ module spi_controller_tb_ver2;
 			
 //			// Simulate MISO data from the ADC
 //			repeat (16) begin
-//				@(posedge cs_bar or posedge sclk); // Wait for rise edge of sclk
-//				dout_miso = test_data[i][15]; // Send MSB first
+//				@(posedge adc_cs_bar or posedge adc_sclk); // Wait for rise edge of sclk
+//				adc_dout_miso = test_data[i][15]; // Send MSB first
 //				test_data[i] = test_data[i] << 1; // Shift to next bit
 //			end
 

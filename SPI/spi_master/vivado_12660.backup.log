@@ -3,12 +3,12 @@
 # SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Sun Feb  2 22:13:11 2025
-# Process ID: 6132
-# Current directory: C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent22168 C:\Users\ADMIN\Documents\GitHub\NUS_SEL_Lab\MTJ_Hardware\MTJ_16\SPI\spi_master\spi_master.xpr
-# Log file: C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/vivado.log
-# Journal file: C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master\vivado.jou
+# Start of session at: Sun Feb  2 19:41:36 2025
+# Process ID: 12660
+# Current directory: C:/Users/ADMIN/Documents/GitHub/tt10-uart-8bit/SPI/spi_master
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent20344 C:\Users\ADMIN\Documents\GitHub\tt10-uart-8bit\SPI\spi_master\spi_master.xpr
+# Log file: C:/Users/ADMIN/Documents/GitHub/tt10-uart-8bit/SPI/spi_master/vivado.log
+# Journal file: C:/Users/ADMIN/Documents/GitHub/tt10-uart-8bit/SPI/spi_master\vivado.jou
 # Running On        :DESKTOP-0V02RSJ
 # Platform          :Windows Server 2016 or Windows 10
 # Operating System  :22631
@@ -19,10 +19,10 @@
 # Host memory       :16924 MB
 # Swap memory       :1073 MB
 # Total Virtual     :17998 MB
-# Available Virtual :9370 MB
+# Available Virtual :9464 MB
 #-----------------------------------------------------------
 start_gui
-open_project C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.xpr
+open_project C:/Users/ADMIN/Documents/GitHub/tt10-uart-8bit/SPI/spi_master/spi_master.xpr
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.6 available at D:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu105/1.6/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.7 available at D:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu105/1.7/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu1500:part0:1.2 available at D:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu1500/1.2/board.xml as part xcku115-flvb2104-2-e specified in board_part file is either invalid or not available
@@ -76,37 +76,35 @@ WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216:part0:2.0 availab
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at D:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at D:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at D:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
-INFO: [Project 1-313] Project file moved from 'C:/Users/ADMIN/Documents/GitHub/tt10-uart-8bit/SPI/spi_master' since last save.
-INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.gen/sources_1'.
+INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/Users/ADMIN/Documents/GitHub/tt10-uart-8bit/SPI/spi_master/spi_master.gen/sources_1'.
 Scanning sources...
 Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2024.1/data/ip'.
-open_project: Time (s): cpu = 00:00:18 ; elapsed = 00:00:13 . Memory (MB): peak = 1487.254 ; gain = 377.844
+open_project: Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1490.926 ; gain = 407.020
 update_compile_order -fileset sources_1
 launch_simulation
 Command: launch_simulation 
 INFO: [Vivado 12-12493] Simulation top is 'tb_spi_master_slave_ver2'
 WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/ADMIN/Documents/GitHub/tt10-uart-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
 INFO: [SIM-utils-51] Simulation object is 'sim_1'
 INFO: [SIM-utils-72] Using boost library from 'D:/Xilinx/Vivado/2024.1/tps/boost_1_72_0'
 INFO: [SIM-utils-54] Inspecting design source files for 'tb_spi_master_slave_ver2' in fileset 'sim_1'...
 INFO: [USF-XSim-97] Finding global include files...
 INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
 INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/ADMIN/Documents/GitHub/tt10-uart-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
 "xvlog --incr --relax -L uvm -prj tb_spi_master_slave_ver2_vlog.prj"
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.srcs/sources_1/new/spi_master_slave_ver2.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ADMIN/Documents/GitHub/tt10-uart-8bit/SPI/spi_master/spi_master.srcs/sources_1/new/spi_master_slave_ver2.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module spi_master_slave_ver2
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.srcs/sim_1/new/tb_spi_master_slave_ver2.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ADMIN/Documents/GitHub/tt10-uart-8bit/SPI/spi_master/spi_master.srcs/sim_1/new/tb_spi_master_slave_ver2.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module tb_spi_master_slave_ver2
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module glbl
-INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 1537.008 ; gain = 0.000
+INFO: [USF-XSim-69] 'compile' step finished in '8' seconds
 INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/ADMIN/Documents/GitHub/tt10-uart-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
 "xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_spi_master_slave_ver2_behav xil_defaultlib.tb_spi_master_slave_ver2 xil_defaultlib.glbl -log elaborate.log"
 Vivado Simulator v2024.1
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
@@ -117,30 +115,23 @@ Starting static elaboration
 Pass Through NonSizing Optimizer
 Completed static elaboration
 Starting simulation data flow analysis
-WARNING: [XSIM 43-4100] "C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
-WARNING: [XSIM 43-4100] "C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "C:/Users/ADMIN/Documents/GitHub/tt10-uart-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "C:/Users/ADMIN/Documents/GitHub/tt10-uart-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
 Compiling module xil_defaultlib.spi_master_slave_ver2_default
 Compiling module xil_defaultlib.tb_spi_master_slave_ver2
 Compiling module xil_defaultlib.glbl
 Built simulation snapshot tb_spi_master_slave_ver2_behav
-INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:10 . Memory (MB): peak = 1537.008 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '9' seconds
 INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/ADMIN/Documents/GitHub/tt10-uart-8bit/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
 INFO: [USF-XSim-98] *** Running xsim
-   with args "tb_spi_master_slave_ver2_behav -key {Behavioral:sim_1:Functional:tb_spi_master_slave_ver2} -tclbatch {tb_spi_master_slave_ver2.tcl} -view {C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/tb_spi_master_ver1_behav.wcfg} -log {simulate.log}"
+   with args "tb_spi_master_slave_ver2_behav -key {Behavioral:sim_1:Functional:tb_spi_master_slave_ver2} -tclbatch {tb_spi_master_slave_ver2.tcl} -view {C:/Users/ADMIN/Documents/GitHub/tt10-uart-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg} -log {simulate.log}"
 INFO: [USF-XSim-8] Loading simulator feature
 Time resolution is 1 ps
-open_wave_config C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/tb_spi_master_ver1_behav.wcfg
-WARNING: Simulation object /tb_spi_master_slave_ver2/input_reg_data was not found in the design.
-WARNING: Simulation object /tb_spi_master_slave_ver2/dout_miso was not found in the design.
-WARNING: Simulation object /tb_spi_master_slave_ver2/din_mosi was not found in the design.
-WARNING: Simulation object /tb_spi_master_slave_ver2/output_reg_data was not found in the design.
-WARNING: Simulation object /tb_spi_master_slave_ver2/uut/input_reg_data was not found in the design.
-WARNING: Simulation object /tb_spi_master_slave_ver2/uut/dout_miso was not found in the design.
-WARNING: Simulation object /tb_spi_master_slave_ver2/uut/din_mosi was not found in the design.
-WARNING: Simulation object /tb_spi_master_slave_ver2/uut/output_reg_data was not found in the design.
+open_wave_config C:/Users/ADMIN/Documents/GitHub/tt10-uart-8bit/SPI/spi_master/tb_spi_master_ver1_behav.wcfg
 source tb_spi_master_slave_ver2.tcl
 # set curr_wave [current_wave_config]
 # if { [string length $curr_wave] == 0 } {
@@ -154,18 +145,11 @@ source tb_spi_master_slave_ver2.tcl
 # run 1000ns
 INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_spi_master_slave_ver2_behav' loaded.
 INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 1559.016 ; gain = 42.523
-current_wave_config {tb_spi_master_ver1_behav.wcfg}
-tb_spi_master_ver1_behav.wcfg
-add_wave {{/tb_spi_master_slave_ver2}} 
-current_wave_config {tb_spi_master_ver1_behav.wcfg}
-tb_spi_master_ver1_behav.wcfg
-add_wave {{/tb_spi_master_slave_ver2/uut}} 
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:22 . Memory (MB): peak = 1564.793 ; gain = 27.785
 restart
 INFO: [Wavedata 42-604] Simulation restarted
 run 200 us
-save_wave_config {C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/tb_spi_master_ver1_behav.wcfg}
 close_sim
 INFO: [Simtcl 6-16] Simulation closed
 exit
-INFO: [Common 17-206] Exiting Vivado at Sun Feb  2 22:39:16 2025...
+INFO: [Common 17-206] Exiting Vivado at Sun Feb  2 21:40:31 2025...
