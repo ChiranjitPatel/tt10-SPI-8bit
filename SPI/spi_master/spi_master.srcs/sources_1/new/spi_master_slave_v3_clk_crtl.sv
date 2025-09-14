@@ -19,13 +19,13 @@ module spi_master_slave (
 	input	logic reset;		
 	input 	logic slave_rx_start;       		// rx_start spi transfer
 	input 	logic slave_tx_start;       		// tx_start spi transfer
-	input 	logic [15:0] miso_reg_data; 		// 16-bit register mosi_reg_data write into slave
-	input	logic mosi;        					// master In, Slave Out (Data from the ADC)
+	input 	logic [15:0] miso_reg_data; 		// miso_reg_data from multiplier or internal core module
+	input	logic mosi;        					// spi from external PC-master
 	input   logic [1:0] freq_control;			// Clock freq selection for sclk
-	input	logic cs_bar;       				// chip select, active low (to the ADC)
+	input	logic cs_bar;       				// chip select, active low
 	output	logic sclk;         				// spi clock - 10 MHz
-	output 	logic miso;         			// spi mosi_reg_data out - ADC mosi_reg_data in
-	output	logic [15:0] mosi_reg_data;  		// mosi_reg_data 
+	output 	logic miso;         				// spi to external PC-master
+	output	logic [15:0] mosi_reg_data;  		// mosi_reg_data to multiplier or internal core module
 	output	logic rx_valid;         			// mosi_reg_data rx valid signal
 	output 	logic tx_done;         				// spi tx completed flag
 	

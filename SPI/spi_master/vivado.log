@@ -3,13 +3,13 @@
 # SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Sun Feb  2 22:13:11 2025
-# Process ID: 6132
+# Start of session at: Sun Sep 14 16:25:06 2025
+# Process ID: 9740
 # Current directory: C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent22168 C:\Users\ADMIN\Documents\GitHub\NUS_SEL_Lab\MTJ_Hardware\MTJ_16\SPI\spi_master\spi_master.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent19760 C:\Users\ADMIN\Documents\GitHub\NUS_SEL_Lab\MTJ_Hardware\MTJ_16\SPI\spi_master\spi_master.xpr
 # Log file: C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/vivado.log
 # Journal file: C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master\vivado.jou
-# Running On        :DESKTOP-0V02RSJ
+# Running On        :think2
 # Platform          :Windows Server 2016 or Windows 10
 # Operating System  :22631
 # Processor Detail  :Intel(R) Core(TM) i7-10610U CPU @ 1.80GHz
@@ -17,9 +17,9 @@
 # CPU Physical cores:4
 # CPU Logical cores :8
 # Host memory       :16924 MB
-# Swap memory       :1073 MB
-# Total Virtual     :17998 MB
-# Available Virtual :9370 MB
+# Swap memory       :3355 MB
+# Total Virtual     :20279 MB
+# Available Virtual :4541 MB
 #-----------------------------------------------------------
 start_gui
 open_project C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.xpr
@@ -76,42 +76,141 @@ WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216:part0:2.0 availab
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at D:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at D:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at D:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
-INFO: [Project 1-313] Project file moved from 'C:/Users/ADMIN/Documents/GitHub/tt10-uart-8bit/SPI/spi_master' since last save.
 INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.gen/sources_1'.
 Scanning sources...
 Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2024.1/data/ip'.
-open_project: Time (s): cpu = 00:00:18 ; elapsed = 00:00:13 . Memory (MB): peak = 1487.254 ; gain = 377.844
+open_project: Time (s): cpu = 00:00:37 ; elapsed = 00:00:25 . Memory (MB): peak = 1491.176 ; gain = 394.730
 update_compile_order -fileset sources_1
+add_files -norecurse C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.srcs/sources_1/new/spi_master_slave_v3_clk_crtl.sv
+update_compile_order -fileset sources_1
+set_property top spi_master_slave [current_fileset]
+update_compile_order -fileset sources_1
+synth_design -top spi_master_slave -part xc7z020clg484-2 -lint 
+Command: synth_design -top spi_master_slave -part xc7z020clg484-2 -lint
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 15220
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:10 ; elapsed = 00:00:09 . Memory (MB): peak = 1969.508 ; gain = 421.395
+---------------------------------------------------------------------------------
+Clean up Linter database...
+INFO: [Synth 8-6157] synthesizing module 'spi_master_slave' [C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.srcs/sources_1/new/spi_master_slave_v3_clk_crtl.sv:1]
+INFO: [Synth 8-226] default block is never used [C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.srcs/sources_1/new/spi_master_slave_v3_clk_crtl.sv:114]
+WARNING: [Synth 8-6014] Unused sequential element rx_ena_reg was removed.  [C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.srcs/sources_1/new/spi_master_slave_v3_clk_crtl.sv:102]
+WARNING: [Synth 8-7137] Register sclk_drive_edge_reg in module spi_master_slave has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.srcs/sources_1/new/spi_master_slave_v3_clk_crtl.sv:146]
+WARNING: [Synth 8-7137] Register sclk_drive_edge_reg in module spi_master_slave has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.srcs/sources_1/new/spi_master_slave_v3_clk_crtl.sv:146]
+INFO: [Synth 8-6155] done synthesizing module 'spi_master_slave' (1#1) [C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.srcs/sources_1/new/spi_master_slave_v3_clk_crtl.sv:1]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2079.871 ; gain = 531.758
+---------------------------------------------------------------------------------
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
+| Date         : Sun Sep 14 16:27:30 2025
+| Host         : think2 running 64-bit major release  (build 9200)
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+RTL Linter Report
+
+Table of Contents
+-----------------
+1. Summary
+
+1. Summary
+----------
+
++---------+----------+--------------+----------+
+| Rule ID | Severity | # Violations | # Waived |
++---------+----------+--------------+----------+
+
+
+INFO: [Synth 37-85] Total of 0 linter message(s) generated.
+INFO: [Synth 37-45] Linter Run Finished!
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2079.871 ; gain = 531.758
+INFO: [Common 17-83] Releasing license: Synthesis
+10 Infos, 3 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2079.871 ; gain = 536.711
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+Command: synth_design -rtl -rtl_skip_mlo -name rtl_1
+Starting synth_design
+Using part: xc7z020clg484-2
+Top: spi_master_slave
+INFO: [Device 21-403] Loading part xc7z020clg484-2
+INFO: [Device 21-9227] Part: xc7z020clg484-2 does not have CEAM library.
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2400.008 ; gain = 123.070
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'spi_master_slave' [C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.srcs/sources_1/new/spi_master_slave_v3_clk_crtl.sv:1]
+INFO: [Synth 8-226] default block is never used [C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.srcs/sources_1/new/spi_master_slave_v3_clk_crtl.sv:114]
+INFO: [Synth 8-6155] done synthesizing module 'spi_master_slave' (0#1) [C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.srcs/sources_1/new/spi_master_slave_v3_clk_crtl.sv:1]
+WARNING: [Synth 8-6014] Unused sequential element rx_ena_reg was removed.  [C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.srcs/sources_1/new/spi_master_slave_v3_clk_crtl.sv:102]
+WARNING: [Synth 8-7137] Register sclk_drive_edge_reg in module spi_master_slave has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.srcs/sources_1/new/spi_master_slave_v3_clk_crtl.sv:146]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2513.641 ; gain = 236.703
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2513.641 ; gain = 236.703
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2513.641 ; gain = 236.703
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 2513.641 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2614.145 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:00:21 ; elapsed = 00:00:20 . Memory (MB): peak = 2637.984 ; gain = 361.047
+8 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:28 ; elapsed = 00:00:48 . Memory (MB): peak = 2637.984 ; gain = 558.113
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.srcs/sim_1/new/tb_spi_master_slave_v3_clk_crtl.sv
+update_compile_order -fileset sim_1
+set_property top tb_spi_master_slave [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
 launch_simulation
 Command: launch_simulation 
-INFO: [Vivado 12-12493] Simulation top is 'tb_spi_master_slave_ver2'
+INFO: [Vivado 12-12493] Simulation top is 'tb_spi_master_slave'
 WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
 INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
 INFO: [SIM-utils-51] Simulation object is 'sim_1'
 INFO: [SIM-utils-72] Using boost library from 'D:/Xilinx/Vivado/2024.1/tps/boost_1_72_0'
-INFO: [SIM-utils-54] Inspecting design source files for 'tb_spi_master_slave_ver2' in fileset 'sim_1'...
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_spi_master_slave' in fileset 'sim_1'...
 INFO: [USF-XSim-97] Finding global include files...
 INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
 INFO: [USF-XSim-2] XSim::Compile design
 INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -L uvm -prj tb_spi_master_slave_ver2_vlog.prj"
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.srcs/sources_1/new/spi_master_slave_ver2.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module spi_master_slave_ver2
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.srcs/sim_1/new/tb_spi_master_slave_ver2.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tb_spi_master_slave_ver2
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module glbl
-INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+"xvlog --incr --relax -L uvm -prj tb_spi_master_slave_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.srcs/sources_1/new/spi_master_slave_v3_clk_crtl.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module spi_master_slave
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.srcs/sim_1/new/tb_spi_master_slave_v3_clk_crtl.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_spi_master_slave
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
 INFO: [USF-XSim-3] XSim::Elaborate design
 INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
-"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_spi_master_slave_ver2_behav xil_defaultlib.tb_spi_master_slave_ver2 xil_defaultlib.glbl -log elaborate.log"
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_spi_master_slave_behav xil_defaultlib.tb_spi_master_slave xil_defaultlib.glbl -log elaborate.log"
 Vivado Simulator v2024.1
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: D:/Xilinx/Vivado/2024.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_spi_master_slave_ver2_behav xil_defaultlib.tb_spi_master_slave_ver2 xil_defaultlib.glbl -log elaborate.log 
+Running: D:/Xilinx/Vivado/2024.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_spi_master_slave_behav xil_defaultlib.tb_spi_master_slave xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
@@ -121,27 +220,64 @@ WARNING: [XSIM 43-4100] "C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardwar
 WARNING: [XSIM 43-4100] "C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.spi_master_slave_ver2_default
-Compiling module xil_defaultlib.tb_spi_master_slave_ver2
+Compiling module xil_defaultlib.spi_master_slave_default
+Compiling module xil_defaultlib.tb_spi_master_slave
 Compiling module xil_defaultlib.glbl
-Built simulation snapshot tb_spi_master_slave_ver2_behav
-INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Built simulation snapshot tb_spi_master_slave_behav
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 2653.977 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
 INFO: [USF-XSim-4] XSim::Simulate design
 INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
 INFO: [USF-XSim-98] *** Running xsim
-   with args "tb_spi_master_slave_ver2_behav -key {Behavioral:sim_1:Functional:tb_spi_master_slave_ver2} -tclbatch {tb_spi_master_slave_ver2.tcl} -view {C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/tb_spi_master_ver1_behav.wcfg} -log {simulate.log}"
+   with args "tb_spi_master_slave_behav -key {Behavioral:sim_1:Functional:tb_spi_master_slave} -tclbatch {tb_spi_master_slave.tcl} -view {C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/tb_spi_master_ver1_behav.wcfg} -log {simulate.log}"
 INFO: [USF-XSim-8] Loading simulator feature
 Time resolution is 1 ps
 open_wave_config C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/tb_spi_master_ver1_behav.wcfg
-WARNING: Simulation object /tb_spi_master_slave_ver2/input_reg_data was not found in the design.
-WARNING: Simulation object /tb_spi_master_slave_ver2/dout_miso was not found in the design.
-WARNING: Simulation object /tb_spi_master_slave_ver2/din_mosi was not found in the design.
-WARNING: Simulation object /tb_spi_master_slave_ver2/output_reg_data was not found in the design.
-WARNING: Simulation object /tb_spi_master_slave_ver2/uut/input_reg_data was not found in the design.
-WARNING: Simulation object /tb_spi_master_slave_ver2/uut/dout_miso was not found in the design.
-WARNING: Simulation object /tb_spi_master_slave_ver2/uut/din_mosi was not found in the design.
-WARNING: Simulation object /tb_spi_master_slave_ver2/uut/output_reg_data was not found in the design.
-source tb_spi_master_slave_ver2.tcl
+WARNING: Simulation object /tb_spi_master_slave_ver2/clk was not found in the design.
+WARNING: Simulation object /tb_spi_master_slave_ver2/reset was not found in the design.
+WARNING: Simulation object /tb_spi_master_slave_ver2/slave_rx_start was not found in the design.
+WARNING: Simulation object /tb_spi_master_slave_ver2/slave_tx_start was not found in the design.
+WARNING: Simulation object /tb_spi_master_slave_ver2/mosi_reg_data was not found in the design.
+WARNING: Simulation object /tb_spi_master_slave_ver2/miso was not found in the design.
+WARNING: Simulation object /tb_spi_master_slave_ver2/cs_bar was not found in the design.
+WARNING: Simulation object /tb_spi_master_slave_ver2/sclk was not found in the design.
+WARNING: Simulation object /tb_spi_master_slave_ver2/mosi was not found in the design.
+WARNING: Simulation object /tb_spi_master_slave_ver2/miso_reg_data was not found in the design.
+WARNING: Simulation object /tb_spi_master_slave_ver2/rx_valid was not found in the design.
+WARNING: Simulation object /tb_spi_master_slave_ver2/tx_done was not found in the design.
+WARNING: Simulation object /tb_spi_master_slave_ver2/test_data was not found in the design.
+WARNING: Simulation object /tb_spi_master_slave_ver2/i was not found in the design.
+WARNING: Simulation object /tb_spi_master_slave_ver2/CLK_PERIOD was not found in the design.
+WARNING: Simulation object /tb_spi_master_slave_ver2/uut/clk was not found in the design.
+WARNING: Simulation object /tb_spi_master_slave_ver2/uut/reset was not found in the design.
+WARNING: Simulation object /tb_spi_master_slave_ver2/uut/slave_rx_start was not found in the design.
+WARNING: Simulation object /tb_spi_master_slave_ver2/uut/slave_tx_start was not found in the design.
+WARNING: Simulation object /tb_spi_master_slave_ver2/uut/mosi_reg_data was not found in the design.
+WARNING: Simulation object /tb_spi_master_slave_ver2/uut/miso was not found in the design.
+WARNING: Simulation object /tb_spi_master_slave_ver2/uut/cs_bar was not found in the design.
+WARNING: Simulation object /tb_spi_master_slave_ver2/uut/sclk was not found in the design.
+WARNING: Simulation object /tb_spi_master_slave_ver2/uut/mosi was not found in the design.
+WARNING: Simulation object /tb_spi_master_slave_ver2/uut/miso_reg_data was not found in the design.
+WARNING: Simulation object /tb_spi_master_slave_ver2/uut/rx_valid was not found in the design.
+WARNING: Simulation object /tb_spi_master_slave_ver2/uut/tx_done was not found in the design.
+WARNING: Simulation object /tb_spi_master_slave_ver2/uut/state was not found in the design.
+WARNING: Simulation object /tb_spi_master_slave_ver2/uut/rx_shift_reg was not found in the design.
+WARNING: Simulation object /tb_spi_master_slave_ver2/uut/tx_shift_reg was not found in the design.
+WARNING: Simulation object /tb_spi_master_slave_ver2/uut/rx_bit_cnt was not found in the design.
+WARNING: Simulation object /tb_spi_master_slave_ver2/uut/tx_bit_cnt was not found in the design.
+WARNING: Simulation object /tb_spi_master_slave_ver2/uut/sclk_en was not found in the design.
+WARNING: Simulation object /tb_spi_master_slave_ver2/uut/tx_ena was not found in the design.
+WARNING: Simulation object /tb_spi_master_slave_ver2/uut/rx_ena was not found in the design.
+WARNING: Simulation object /tb_spi_master_slave_ver2/uut/rx_state_flag was not found in the design.
+WARNING: Simulation object /tb_spi_master_slave_ver2/uut/tx_state_flag was not found in the design.
+WARNING: Simulation object /tb_spi_master_slave_ver2/uut/wait_cnt was not found in the design.
+WARNING: Simulation object /tb_spi_master_slave_ver2/uut/clk_div_cnt was not found in the design.
+WARNING: Simulation object /tb_spi_master_slave_ver2/uut/CLK_DIV was not found in the design.
+WARNING: Simulation object /tb_spi_master_slave_ver2/uut/CLK_DIV_BITS was not found in the design.
+WARNING: Simulation object /tb_spi_master_slave_ver2/uut/WAIT_BITS was not found in the design.
+WARNING: Simulation object /tb_spi_master_slave_ver2/uut/DATA_WIDTH was not found in the design.
+WARNING: Simulation object /tb_spi_master_slave_ver2/uut/DATA_WIDTH_BITS was not found in the design.
+source tb_spi_master_slave.tcl
 # set curr_wave [current_wave_config]
 # if { [string length $curr_wave] == 0 } {
 #   if { [llength [get_objects]] > 0} {
@@ -152,20 +288,312 @@ source tb_spi_master_slave_ver2.tcl
 #   }
 # }
 # run 1000ns
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_spi_master_slave_ver2_behav' loaded.
+Starting TX-only test...
+TX-only test passed: sent 55aa, collected on miso 55aa
+Starting RX-only test...
+RX-only test passed: expected a55a, received a55a
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_spi_master_slave_behav' loaded.
 INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 1559.016 ; gain = 42.523
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:14 . Memory (MB): peak = 2672.332 ; gain = 18.355
 current_wave_config {tb_spi_master_ver1_behav.wcfg}
 tb_spi_master_ver1_behav.wcfg
-add_wave {{/tb_spi_master_slave_ver2}} 
+add_wave {{/tb_spi_master_slave}} 
 current_wave_config {tb_spi_master_ver1_behav.wcfg}
 tb_spi_master_ver1_behav.wcfg
-add_wave {{/tb_spi_master_slave_ver2/uut}} 
+add_wave {{/tb_spi_master_slave/dut}} 
 restart
 INFO: [Wavedata 42-604] Simulation restarted
-run 200 us
+run 2000 ns
+Starting TX-only test...
+TX-only test passed: sent 55aa, collected on miso 55aa
+Starting RX-only test...
+RX-only test passed: expected a55a, received a55a
+Starting TX+RX test...
+run 2000 ns
+run 2000 ns
+run 2000 ns
+run 2000 ns
+run 2000 ns
+run 2000 ns
+run 2000 ns
+run 2000 ns
+run 2000 ns
+run 2000 ns
+save_wave_config {C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/tb_spi_master_ver1_behav.wcfg}
+save_wave_config {C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/tb_spi_master_ver1_behav.wcfg}
+current_wave_config {tb_spi_master_ver1_behav.wcfg}
+C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/tb_spi_master_ver1_behav.wcfg
+add_wave {{/tb_spi_master_slave}} 
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_spi_master_slave'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'D:/Xilinx/Vivado/2024.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_spi_master_slave' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_spi_master_slave_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.srcs/sources_1/new/spi_master_slave_v3_clk_crtl.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module spi_master_slave
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.srcs/sim_1/new/tb_spi_master_slave_v3_clk_crtl.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_spi_master_slave
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_spi_master_slave'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_spi_master_slave_behav xil_defaultlib.tb_spi_master_slave xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2024.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2024.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_spi_master_slave_behav xil_defaultlib.tb_spi_master_slave xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.spi_master_slave_default
+Compiling module xil_defaultlib.tb_spi_master_slave
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_spi_master_slave_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Time resolution is 1 ps
+Starting TX-only test...
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 3725.707 ; gain = 0.000
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run 2000 ns
+Starting TX-only test...
+TX-only test passed: sent 55aa, collected on miso 55aa
+Starting RX-only test...
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_spi_master_slave'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_spi_master_slave_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.srcs/sources_1/new/spi_master_slave_v3_clk_crtl.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module spi_master_slave
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.srcs/sim_1/new/tb_spi_master_slave_v3_clk_crtl.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_spi_master_slave
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_spi_master_slave'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_spi_master_slave_behav xil_defaultlib.tb_spi_master_slave xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2024.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2024.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_spi_master_slave_behav xil_defaultlib.tb_spi_master_slave xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.spi_master_slave_default
+Compiling module xil_defaultlib.tb_spi_master_slave
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_spi_master_slave_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Time resolution is 1 ps
+Starting TX-only test...
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 3725.707 ; gain = 0.000
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run 2000 ns
+Starting TX-only test...
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_spi_master_slave'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_spi_master_slave_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.srcs/sources_1/new/spi_master_slave_v3_clk_crtl.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module spi_master_slave
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.srcs/sim_1/new/tb_spi_master_slave_v3_clk_crtl.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_spi_master_slave
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_spi_master_slave'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_spi_master_slave_behav xil_defaultlib.tb_spi_master_slave xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2024.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2024.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_spi_master_slave_behav xil_defaultlib.tb_spi_master_slave xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.spi_master_slave_default
+Compiling module xil_defaultlib.tb_spi_master_slave
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_spi_master_slave_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Time resolution is 1 ps
+Starting TX-only test...
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 3725.707 ; gain = 0.000
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run 2000 ns
+Starting TX-only test...
+run 2000 ns
+run 2000 ns
+run 2000 ns
+run 2000 ns
+run 2000 ns
+run 2000 ns
+run 2000 ns
+run 2000 ns
+TX-only test passed: sent 55aa, collected on miso 55aa
+Starting RX-only test...
+run 2000 ns
+run 2000 ns
+run 2000 ns
+run 2000 ns
+run 2000 ns
+run 2000 ns
+run 2000 ns
+run 2000 ns
+run 2000 ns
+run 2000 ns
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_spi_master_slave'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_spi_master_slave_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.srcs/sources_1/new/spi_master_slave_v3_clk_crtl.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module spi_master_slave
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.srcs/sim_1/new/tb_spi_master_slave_v3_clk_crtl.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_spi_master_slave
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_spi_master_slave'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_spi_master_slave_behav xil_defaultlib.tb_spi_master_slave xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2024.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2024.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_spi_master_slave_behav xil_defaultlib.tb_spi_master_slave xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.spi_master_slave_default
+Compiling module xil_defaultlib.tb_spi_master_slave
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_spi_master_slave_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Time resolution is 1 ps
+Starting TX-only test...
+TX-only test passed: sent 55aa, collected on miso 55aa
+Starting RX-only test...
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 3725.707 ; gain = 0.000
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run 2000 ns
+Starting TX-only test...
+TX-only test passed: sent 55aa, collected on miso 55aa
+Starting RX-only test...
+run 2000 ns
+run 2000 ns
+relaunch_sim
+Command: launch_simulation -step compile -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_spi_master_slave'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_spi_master_slave_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.srcs/sources_1/new/spi_master_slave_v3_clk_crtl.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module spi_master_slave
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.srcs/sim_1/new/tb_spi_master_slave_v3_clk_crtl.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_spi_master_slave
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -step elaborate -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_spi_master_slave'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_spi_master_slave_behav xil_defaultlib.tb_spi_master_slave xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2024.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2024.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_spi_master_slave_behav xil_defaultlib.tb_spi_master_slave xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.spi_master_slave_default
+Compiling module xil_defaultlib.tb_spi_master_slave
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_spi_master_slave_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Time resolution is 1 ps
+Starting TX-only test...
+TX-only test passed: sent 55aa, collected on miso 55aa
+Starting RX-only test...
+RX-only test passed: expected a55a, received a55a
+relaunch_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 3725.707 ; gain = 0.000
+run 2000 ns
+Starting TX+RX test...
 save_wave_config {C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/tb_spi_master_ver1_behav.wcfg}
 close_sim
 INFO: [Simtcl 6-16] Simulation closed
 exit
-INFO: [Common 17-206] Exiting Vivado at Sun Feb  2 22:39:16 2025...
+INFO: [Common 17-206] Exiting Vivado at Sun Sep 14 16:55:46 2025...

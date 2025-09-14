@@ -3,13 +3,13 @@
 # SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Sun Feb  2 22:13:11 2025
-# Process ID: 6132
+# Start of session at: Sun Sep 14 16:25:06 2025
+# Process ID: 9740
 # Current directory: C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent22168 C:\Users\ADMIN\Documents\GitHub\NUS_SEL_Lab\MTJ_Hardware\MTJ_16\SPI\spi_master\spi_master.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent19760 C:\Users\ADMIN\Documents\GitHub\NUS_SEL_Lab\MTJ_Hardware\MTJ_16\SPI\spi_master\spi_master.xpr
 # Log file: C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/vivado.log
 # Journal file: C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master\vivado.jou
-# Running On        :DESKTOP-0V02RSJ
+# Running On        :think2
 # Platform          :Windows Server 2016 or Windows 10
 # Operating System  :22631
 # Processor Detail  :Intel(R) Core(TM) i7-10610U CPU @ 1.80GHz
@@ -17,21 +17,89 @@
 # CPU Physical cores:4
 # CPU Logical cores :8
 # Host memory       :16924 MB
-# Swap memory       :1073 MB
-# Total Virtual     :17998 MB
-# Available Virtual :9370 MB
+# Swap memory       :3355 MB
+# Total Virtual     :20279 MB
+# Available Virtual :4541 MB
 #-----------------------------------------------------------
 start_gui
 open_project C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.xpr
 update_compile_order -fileset sources_1
+add_files -norecurse C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.srcs/sources_1/new/spi_master_slave_v3_clk_crtl.sv
+update_compile_order -fileset sources_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top spi_master_slave [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+synth_design -top spi_master_slave -part xc7z020clg484-2 -lint 
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.srcs/sim_1/new/tb_spi_master_slave_v3_clk_crtl.sv
+update_compile_order -fileset sim_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top tb_spi_master_slave [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
 launch_simulation
 open_wave_config C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/tb_spi_master_ver1_behav.wcfg
-source tb_spi_master_slave_ver2.tcl
+source tb_spi_master_slave.tcl
 current_wave_config {tb_spi_master_ver1_behav.wcfg}
-add_wave {{/tb_spi_master_slave_ver2}} 
+add_wave {{/tb_spi_master_slave}} 
 current_wave_config {tb_spi_master_ver1_behav.wcfg}
-add_wave {{/tb_spi_master_slave_ver2/uut}} 
+add_wave {{/tb_spi_master_slave/dut}} 
 restart
-run 200 us
+run 2000 ns
+run 2000 ns
+run 2000 ns
+run 2000 ns
+run 2000 ns
+run 2000 ns
+run 2000 ns
+run 2000 ns
+run 2000 ns
+run 2000 ns
+run 2000 ns
+save_wave_config {C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/tb_spi_master_ver1_behav.wcfg}
+save_wave_config {C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/tb_spi_master_ver1_behav.wcfg}
+current_wave_config {tb_spi_master_ver1_behav.wcfg}
+add_wave {{/tb_spi_master_slave}} 
+relaunch_sim
+restart
+run 2000 ns
+relaunch_sim
+restart
+run 2000 ns
+relaunch_sim
+restart
+run 2000 ns
+run 2000 ns
+run 2000 ns
+run 2000 ns
+run 2000 ns
+run 2000 ns
+run 2000 ns
+run 2000 ns
+run 2000 ns
+run 2000 ns
+run 2000 ns
+run 2000 ns
+run 2000 ns
+run 2000 ns
+run 2000 ns
+run 2000 ns
+run 2000 ns
+run 2000 ns
+run 2000 ns
+relaunch_sim
+restart
+run 2000 ns
+run 2000 ns
+run 2000 ns
+relaunch_sim
+run 2000 ns
 save_wave_config {C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/tb_spi_master_ver1_behav.wcfg}
 close_sim

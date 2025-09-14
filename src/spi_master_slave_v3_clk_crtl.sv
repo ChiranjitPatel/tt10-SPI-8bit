@@ -24,7 +24,7 @@ module spi_master_slave (
 	input   logic [1:0] freq_control;			// Clock freq selection for sclk
 	input	logic cs_bar;       				// chip select, active low (to the ADC)
 	output	logic sclk;         				// spi clock - 10 MHz
-	output 	logic miso;         			// spi mosi_reg_data out - ADC mosi_reg_data in
+	output 	logic miso;         				// spi mosi_reg_data out - ADC mosi_reg_data in
 	output	logic [15:0] mosi_reg_data;  		// mosi_reg_data 
 	output	logic rx_valid;         			// mosi_reg_data rx valid signal
 	output 	logic tx_done;         				// spi tx completed flag

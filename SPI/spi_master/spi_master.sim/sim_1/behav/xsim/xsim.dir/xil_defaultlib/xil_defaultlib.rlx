@@ -3,5 +3,7 @@
 May 22 2024
 19:03:11
 C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.sim/sim_1/behav/xsim/glbl.v,1708598507,verilog,,,,glbl,,uvm,,,,,,
+C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.srcs/sim_1/new/tb_spi_master_slave_v3_clk_crtl.sv,1757840022,systemVerilog,,,,tb_spi_master_slave,,uvm,,,,,,
 C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.srcs/sim_1/new/tb_spi_master_slave_ver2.sv,1738505559,systemVerilog,,,,tb_spi_master_slave_ver2,,uvm,,,,,,
+C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.srcs/sources_1/new/spi_master_slave_v3_clk_crtl.sv,1757839782,systemVerilog,,C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.srcs/sim_1/new/tb_spi_master_slave_v3_clk_crtl.sv,,spi_master_slave,,uvm,,,,,,
 C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.srcs/sources_1/new/spi_master_slave_ver2.sv,1738505368,systemVerilog,,C:/Users/ADMIN/Documents/GitHub/NUS_SEL_Lab/MTJ_Hardware/MTJ_16/SPI/spi_master/spi_master.srcs/sim_1/new/tb_spi_master_slave_ver2.sv,,spi_master_slave_ver2,,uvm,,,,,,

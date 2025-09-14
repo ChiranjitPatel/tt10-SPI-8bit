@@ -20,7 +20,7 @@ module spi_master_slave_ver2 (
 	input 	logic slave_tx_start;       		// tx_start spi transfer
 	input 	logic [31:0] mosi_reg_data; 		// 32-bit register miso_reg_data write into slave
 	input	logic miso;        					// master In, Slave Out (Data from the ADC)
-	input	logic cs_bar;       				// chip select, active low (to the ADC)
+	output	logic cs_bar;       				// chip select, active low (to the ADC)
 	output	logic sclk;         				// spi clock - 10 MHz
 	output 	logic mosi;         				// spi miso_reg_data out - ADC miso_reg_data in
 	output	logic [31:0] miso_reg_data;  		// miso_reg_data 
