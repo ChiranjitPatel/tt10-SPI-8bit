@@ -197,7 +197,7 @@ module spi_master_slave (
 					end
 				end				
 
-				// Add the additional wait time between the mosi_reg_data frames for better reception of mosi_reg_data to the ADC
+				// Add the additional wait time between the mosi_reg_data frames for better reception of mosi_reg_data
 				WAIT_NEXT: begin
 					sclk_en <= 0; 
 					wait_cnt <= wait_cnt + 1;
